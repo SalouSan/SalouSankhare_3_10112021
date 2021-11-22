@@ -1,7 +1,13 @@
+$font-family-log-title: Shrikhand;
+$font-family-text: Roboto;
+$btn-color: #FF79DA; 
+$border-and-checkingcolor: #99E2D0;
+
 h1{
-text-align: center;
-font-family: Roboto;
+    text-align: center;
+    font-family: $font-family-log-title;
 }
+
 body{
-font-family: Roboto;
+    font-family: $font-family-text;
 }
