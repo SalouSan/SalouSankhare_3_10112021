@@ -142,15 +142,15 @@ body{
 
 .Entrée-menu{
     text-align: left;
-    &__Tartare{
+    &__card1{
         @include menu-block (15px);    
     }
 
-    &__Velouté{
+    &__card2{
         @include menu-block (15px);     
     }
 
-    &__Soupe{
+    &__card3{
         @include menu-block (15px);      
     }
     &--title{
@@ -161,13 +161,13 @@ body{
 
 .Plats-menu {
     text-align: left;
-    &__Coquilles{
+    &__card1{
         @include menu-block (15px);
     }
-    &__Magret{
+    &__card2{
         @include menu-block(15px);
     }
-    &__Pigeonneau{
+    &__card3{
         @include menu-block (15px);
     }
     &--title{
@@ -177,13 +177,13 @@ body{
 
 .Dessert-menu {
     text-align: left;
-    &__Pétales{
+    &__card1{
         @include menu-block(15px);
     }
-    &__Fondant{
+    &__card2{
         @include menu-block(15px);
     }
-    &__Millefeuille{
+    &__card3{
         @include menu-block(15px);
     }
     &--title{
