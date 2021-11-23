@@ -4,104 +4,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu restaurant à la Francaise">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Ohmyfood </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <i class="Arrow">
+            <i class="fas fa-arrow-left">  
+            </i>
+        </i>
         <h1> Ohmyfood</h1>
-        <img src="Images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image de fond">
     </header>
 <main>
-    <section class= Entrée-menu>
-        <h3> ENTREES </h3>
-        <div class="Entrée-menu__Tartare">
-            <figure>
-                Tartare de poulpe acidulé <br />
-                <figcaption>
-                    Aux zests d'orange 25€
-                </figcaption>
-            </figure>
-        </div> 
+    <div class="Image">
+        <img class="resto" src="/Users/salousankhare/Desktop/Projet3/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Photo du restaurant">
+    </div>
+    <section class="Principal">
+        <div class="HeadT">
+            <h2> À la française </h2> 
+            <i class="heart"> 
+                <i class="far fa-heart">
+                </i> 
+            </i>
+        </div>
+        <section class= Entrée-menu>
+            <h3> ENTRÉES </h3>
+            <div class="Entrée-menu__Tartare">
+                <figure class="Entrée-menu--title">
+                    Tartare de poulpe acidulé 
+                    <figcaption>
+                        Aux zests d'orange <strong> 25€ </strong>
+                    </figcaption>
+                </figure>
+            </div> 
 
-        <div class="Entrée-menu__Velouté">
-            <figure>
-                Velouté de legumes d'antan <br />
-                <figcaption>
-                    Carotte, panais, topinambour 35€
-                </figcaption>
-            </figure>
-        </div>
-        <div class="Entrée-menu__Soupe">
-            <figure>
-                Soupe à l'oignon
-                <figcaption>
-                    Revisitée 20€
-                </figcaption>
-            </figure>
-        </div>
-    </section>
-   
-    <section class="Plats-menu">
-        <h3> PLATS </h3>
-        <div class="Plats-menu__Coquilles">
-            <figure>
-                Coquilles Saint-Jacques
-                <figcaption>
-                    Accompagnées d'une purée de panais 40€
-                </figcaption>
-            </figure>
-        </div>
-        <div class="Plats-menu__Magret">
-            <figure>
-                Magret de canard
-                <figcaption>
-                    Et parmentier de pommes de terres 35€
-                </figcaption>
-            </figure>
-        </div>
-        <div class="Plats-menu__Pigeonneau">
-            <figure>
-                Pigeonneau d'Ille-et-Vilaine
-                <figcaption>
-                  Sur son lit de gnocchis aux légumes 44€  
-                </figcaption>
-            </figure>
-        </div>
-    </section>
+            <div class="Entrée-menu__Velouté">
+                <figure class="Entrée-menu--title">
+                    Velouté de legumes d'antan 
+                    <figcaption>
+                        Carotte, panais, topinambour <strong> 35€ </strong>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="Entrée-menu__Soupe">
+                <figure class="Entrée-menu--title">
+                    Soupe à l'oignon 
+                    <figcaption>
+                        Revisitée <strong> 20€</strong>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    
+        <section class="Plats-menu">
+            <h3> PLATS </h3>
+            <div class="Plats-menu__Coquilles">
+                <figure class="Plats-menu--title">
+                    Coquilles Saint-Jacques 
+                    <figcaption>
+                        Accompagnées d'une purée de panais <strong> 40€ </strong>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="Plats-menu__Magret">
+                <figure class="Plats-menu--title">
+                    Magret de canard 
+                    <figcaption>
+                        Et parmentier de pommes de terres <strong> 35€ </strong>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="Plats-menu__Pigeonneau">
+                <figure class="Plats-menu--title">
+                    Pigeonneau d'Ille-et-Vilaine 
+                    <figcaption>
+                    Sur son lit de gnocchis aux légumes <strong> 44€ </strong>  
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-    <section class="Dessert-menu">
-        <h3> DESSERTS </h3>
-        <div class="Dessert-menu__Pétales">
-            <figure>
-               Pétales de violettes glacés 
-               <figcaption>
-                   Et purée de noisettes 18€
-               </figcaption>
-            </figure>
-        </div>
-        <div class="Dessert-menu__Fondant">
-            <figure>
-                Fondant au chocolat
+        <section class="Dessert-menu">
+            <h3> DESSERTS </h3>
+            <div class="Dessert-menu__Pétales">
+                <figure class="Dessert-menu--title">
+                Pétales de violettes glacés 
                 <figcaption>
-                    Revisité 22€
+                    Et purée de noisettes <strong> 18€ </strong>
                 </figcaption>
-            </figure>
-        </div>
-        <div class="Dessert-menu__Millefeuille">
-            <figure>
-                Millefeuille croustillant
-                <figcaption>
-                    Myrtilles et pâte d'amande 23€
-                </figcaption>
-            </figure>
-        </div>
+                </figure>
+            </div>
+            <div class="Dessert-menu__Fondant">
+                <figure class="Dessert-menu--title">
+                    Fondant au chocolat 
+                    <figcaption>
+                        Revisité <strong> 22€ </strong>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="Dessert-menu__Millefeuille">
+                <figure class="Dessert-menu--title">
+                    Millefeuille croustillant 
+                    <figcaption> 
+                        Myrtilles et pâte d'amande <strong> 23€ </strong>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
     </section>
 
     <button class="btn_command">
@@ -113,9 +129,11 @@
 <footer>
     <h4> Ohmyfood </h4>
     <div class="Resto">
+        <i class="fas fa-utensils"></i>
         Proposer un restaurant
     </div>
     <div class="Partenaire">
+        <i class="fas fa-hands-helping"></i>
         Devenir partenaire
     </div>
     <div class="ML">
@@ -125,5 +143,6 @@
         Contact
     </div>
 </footer>   
+<script src="https://kit.fontawesome.com/43d706fb72.js" crossorigin="anonymous"></script>
 </body>
 </html>

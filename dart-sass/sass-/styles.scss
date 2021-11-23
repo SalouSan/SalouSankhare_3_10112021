@@ -1,13 +1,221 @@
+    
 $font-family-log-title: Shrikhand;
 $font-family-text: Roboto;
-$btn-color: #FF79DA; 
+$color-primary : #9356DC;
+$color-secondary: #FF79DA; 
 $border-and-checkingcolor: #99E2D0;
+%figure-layout{
+margin-left : 10px;
+margin-top: 12px;
+font-weight: bolder;
+font-size: 18px;
+}
+@mixin h3form {
+    font-family: $font-family-text;
+    font-weight: lighter;
+    font-size: 16px;
+    border-bottom : 2px solid $border-and-checkingcolor;
+    width: 11%;
+    margin-left: 15px;
+}
+@mixin titles ($size:16px) {
+    font-family: $font-family-log-title;
+    font-size: $size;
+    
+}
+
+@mixin footer {
+    background-color: rgb(53, 48, 48);
+    font-family: $font-family-text;
+    color: white;
+    font-size: 15px;
+    height: 200px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@mixin menu-block ($margin-b:10px){
+    border: 2px double black; 
+    border-radius: 15px;
+    background-color: #FFFF;
+    width: 92%;
+    height: 70px;
+    border-color: #FFFF;
+    box-shadow: 3px 3px 3px 3px rgb(245, 245, 245);
+    margin-bottom: $margin-b;
+    margin-left:15px;
+
+}
 
 h1{
     text-align: center;
-    font-family: $font-family-log-title;
+    @include titles (25px);
+    &::before{
+        border: 3px solid black;
+    }
+
 }
+    
+.HeadT{
+    display: flex;
+    @include titles (20px);
+    position: relative;
+    margin-left: 15px;
+ 
+}
+.heart{
+    font-size: 26px;
+    position: absolute;
+    top :30%;
+    left: 85%;
+    font-weight: lighter;
+}
+
+.Image{
+    display: flex;
+    width: 100%;
+}
+.Principal{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid;
+    border-radius: 25px;
+    border-top-left-radius: 40px ;
+    border-top-right-radius: 40px;
+    border-left: 3px solid;
+    border-right: 3px solid;
+    background-color: rgb(250, 250, 250);
+    border-color: rgb(250, 250, 250);
+    box-shadow: 0px 0px 0px 0px;  
+    margin-top: -47px;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.resto{
+    width: 100%;
+    
+}
+figcaption{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13.5px;
+    font-weight: 300px;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+h3{
+    @include h3form;
+    text-align: center;
+}
+
+h4{
+    @include titles(13px);
+
+}
+header{
+    position: relative;
+    
+}
+
+.Arrow{
+    position: absolute;
+    top :13%;
+    left:5%;
+    font-size:20px;
+}
+
 
 body{
     font-family: $font-family-text;
+    background-color: rgb(250, 250, 250);
+    margin : 0 auto;
+    border : 1px solid black; 
+    max-width :750px;
+    position: relative;
 }
+
+.Entrée-menu{
+    text-align: left;
+    &__Tartare{
+        @include menu-block (15px);    
+    }
+
+    &__Velouté{
+        @include menu-block (15px);     
+    }
+
+    &__Soupe{
+        @include menu-block (15px);      
+    }
+    &--title{
+      @extend %figure-layout  
+    }
+}
+
+
+.Plats-menu {
+    text-align: left;
+    &__Coquilles{
+        @include menu-block (15px);
+    }
+    &__Magret{
+        @include menu-block(15px);
+    }
+    &__Pigeonneau{
+        @include menu-block (15px);
+    }
+    &--title{
+        @extend %figure-layout  
+      }
+}
+
+.Dessert-menu {
+    text-align: left;
+    &__Pétales{
+        @include menu-block(15px);
+    }
+    &__Fondant{
+        @include menu-block(15px);
+    }
+    &__Millefeuille{
+        @include menu-block(15px);
+    }
+    &--title{
+        @extend %figure-layout  
+      }
+}
+
+
+
+.btn_command{
+    background-color:$color-primary;
+    color: white;
+    width: 35%;
+    height: 40px;
+    border-radius: 20px; 
+    border-color: transparent;  
+    transform: scale(1); 
+    margin-left :33%;
+    margin-top:25px;
+    &:hover{
+        background-color: $color-secondary;
+    }
+    
+}
+
+
+
+footer {
+    @include footer;
+    
+    
+}
+
+
+
