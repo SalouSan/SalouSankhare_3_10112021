@@ -1,8 +1,306 @@
+@charset "UTF-8";
+.Entrée-menu--title, .Plats-menu--title, .Dessert-menu--title {
+  margin-left: 10px;
+  margin-top: 12px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
 h1 {
   text-align: center;
-  font-family: Roboto;
+  font-family: Shrikhand;
+  font-size: 25px;
 }
+
+h1::before {
+  border: 3px solid black;
+}
+
+.HeadT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Shrikhand;
+  font-size: 20px;
+  position: relative;
+  margin-left: 15px;
+}
+
+.heart {
+  font-size: 26px;
+  position: absolute;
+  top: 30%;
+  left: 85%;
+  font-weight: lighter;
+}
+
+.Image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.Principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 1px solid;
+  border-radius: 25px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  background-color: #fafafa;
+  border-color: #fafafa;
+  -webkit-box-shadow: 0px 0px 0px 0px;
+          box-shadow: 0px 0px 0px 0px;
+  margin-top: -47px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resto {
+  width: 100%;
+}
+
+figcaption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 300px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+h3 {
+  font-family: Roboto;
+  font-weight: lighter;
+  font-size: 16px;
+  border-bottom: 2px solid #99E2D0;
+  width: 11%;
+  margin-left: 15px;
+  text-align: center;
+}
+
+h4 {
+  font-family: Shrikhand;
+  font-size: 13px;
+}
+
+header {
+  position: relative;
+}
+
+.Arrow {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  font-size: 20px;
+}
+
 body {
-   font-family: Roboto;
-  }
-  /*# sourceMappingURL=styles.css.map */
+  font-family: Roboto;
+  background-color: #fafafa;
+  margin: 0 auto;
+  border: 1px solid black;
+  max-width: 750px;
+  position: relative;
+}
+
+.Entrée-menu {
+  text-align: left;
+}
+
+.Entrée-menu__card1 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Entrée-menu__card2 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Entrée-menu__card3 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Entrée-menu__card4 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Plats-menu {
+  text-align: left;
+}
+
+.Plats-menu__card1 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Plats-menu__card2 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Plats-menu__card3 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Dessert-menu {
+  text-align: left;
+}
+
+.Dessert-menu__card1 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Dessert-menu__card2 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.Dessert-menu__card3 {
+  border: 2px double black;
+  border-radius: 15px;
+  background-color: #FFFF;
+  width: 92%;
+  height: 70px;
+  border-color: #FFFF;
+  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+          box-shadow: 3px 3px 3px 3px whitesmoke;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.btn_command {
+  background-color: #9356DC;
+  color: white;
+  width: 35%;
+  height: 40px;
+  border-radius: 20px;
+  border-color: transparent;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin-left: 33%;
+  margin-top: 25px;
+}
+
+.btn_command:hover {
+  background-color: #FF79DA;
+}
+
+footer {
+  background-color: #353030;
+  font-family: Roboto;
+  color: white;
+  font-size: 15px;
+  height: 200px;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/*# sourceMappingURL=styles.css.map */
