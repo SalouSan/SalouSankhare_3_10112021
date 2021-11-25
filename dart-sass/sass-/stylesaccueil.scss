@@ -1,0 +1,69 @@
+h1{
+    font-family: Shrikhand;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+form{
+    display: flex;
+    background: rgb(211, 210, 210);
+    font-size: 17px;
+    font-family: Roboto;
+    text-align: center;
+    .Inpt{
+        font-size: 15px;
+    }
+}
+article{
+    background: rgb(241, 241, 241);
+    text-align: center;
+    font-family: Roboto;
+    button {
+        height: 40px;
+        width: 6Opx;
+        border-radius: 20px;
+        background: #FF79DA; 
+        margin-top: 10px;
+        font-size: 14px;
+        color: white;
+        font-family: Roboto;
+    }
+}
+.Choose-resto{
+    display: flex;
+    border-radius: 20px;
+    background: rgb(241, 241, 241);
+    width: 250px;
+    .Mobile-phone{
+        display: flex;
+        align-items: center;
+    } 
+}
+.Compose-menu{
+    display: flex;
+    border-radius: 20px;
+    background: rgb(241, 241, 241);
+    width: 250px;
+    .List{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.Choose-restaurant{
+    display: flex;
+    border-radius: 20px;
+    background: rgb(241, 241, 241);
+    width: 250px;
+    .Store{
+        display: flex;
+        align-items: center;
+    }
+}
+.Restaurants-places{
+    background: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .Resto-1{
+    }
+}

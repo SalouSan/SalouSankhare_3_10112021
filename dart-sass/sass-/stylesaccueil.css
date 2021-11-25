@@ -1,0 +1,105 @@
+h1 {
+  font-family: Shrikhand;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #d3d2d2;
+  font-size: 17px;
+  font-family: Roboto;
+  text-align: center;
+}
+
+form .Inpt {
+  font-size: 15px;
+}
+
+article {
+  background: #f1f1f1;
+  text-align: center;
+  font-family: Roboto;
+}
+
+article button {
+  height: 40px;
+  width: 6Opx;
+  border-radius: 20px;
+  background: #FF79DA;
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: Roboto;
+}
+
+.Choose-resto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 20px;
+  background: #f1f1f1;
+  width: 250px;
+}
+
+.Choose-resto .Mobile-phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Compose-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 20px;
+  background: #f1f1f1;
+  width: 250px;
+}
+
+.Compose-menu .List {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Choose-restaurant {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 20px;
+  background: #f1f1f1;
+  width: 250px;
+}
+
+.Choose-restaurant .Store {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Restaurants-places {
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=stylesaccueil.css.map */
