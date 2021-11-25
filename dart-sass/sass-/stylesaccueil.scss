@@ -1,3 +1,8 @@
+$font-family-log-title: Shrikhand;
+$font-family-text: Roboto;
+$color-primary : #9356DC;
+$color-secondary: #FF79DA; 
+
 h1{
     font-family: Shrikhand;
     border-bottom: 1px solid black;
@@ -5,65 +10,93 @@ h1{
 }
 form{
     display: flex;
+    justify-content: center;
     background: rgb(211, 210, 210);
     font-size: 17px;
     font-family: Roboto;
     text-align: center;
     .Inpt{
         font-size: 15px;
+        border-style: none;
+        margin-left: 10px;
+        background: rgb(211, 210, 210);
     }
 }
 article{
     background: rgb(241, 241, 241);
     text-align: center;
-    font-family: Roboto;
+    font-family: $font-family-text;
     button {
         height: 40px;
         width: 6Opx;
         border-radius: 20px;
-        background: #FF79DA; 
+        background: $color-secondary;
         margin-top: 10px;
         font-size: 14px;
         color: white;
         font-family: Roboto;
     }
 }
-.Choose-resto{
-    display: flex;
-    border-radius: 20px;
-    background: rgb(241, 241, 241);
-    width: 250px;
-    .Mobile-phone{
-        display: flex;
-        align-items: center;
-    } 
+
+body {
+    font-family: $font-family-text; 
 }
-.Compose-menu{
+.Fonctionnement{
     display: flex;
-    border-radius: 20px;
-    background: rgb(241, 241, 241);
-    width: 250px;
-    .List{
+    flex-direction: column;
+    margin-bottom: 30px;
+    .Choose-resto{
         display: flex;
-        align-items: center;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        background: rgb(241, 241, 241);
+        width: 250px;
+        .Mobile-phone{
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        } 
+        &__caption{
+            margin-left: 20px;
+        }
+    }
+    .Compose-menu{
+        display: flex;
+        border-radius: 20px;
+        background: rgb(241, 241, 241);
+        width: 250px;
+        margin-bottom: 20px;
+        .List{
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        &__caption{
+            margin-left: 20px;
+        }
+    }
+
+    .Choose-restaurant{
+        display: flex;
+        border-radius: 20px;
+        background: rgb(241, 241, 241);
+        width: 250px;
+        .Store{
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            color: $color-primary;
+        }
+        &__caption{
+            margin-left: 20px;
+        }
     }
 }
 
-.Choose-restaurant{
-    display: flex;
-    border-radius: 20px;
-    background: rgb(241, 241, 241);
-    width: 250px;
-    .Store{
-        display: flex;
-        align-items: center;
-    }
-}
 .Restaurants-places{
     background: rgb(241, 241, 241);
     display: flex;
     align-items: center;
     flex-direction: column;
-    .Resto-1{
-    }
+    
 }
