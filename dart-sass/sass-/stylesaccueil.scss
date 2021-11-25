@@ -5,8 +5,9 @@ $color-secondary: #FF79DA;
 
 h1{
     font-family: Shrikhand;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     text-align: center;
+
 }
 form{
     display: flex;
@@ -15,17 +16,28 @@ form{
     font-size: 17px;
     font-family: Roboto;
     text-align: center;
+    height: 40px;
+    margin-top: -15px;
     .Inpt{
         font-size: 15px;
         border-style: none;
         margin-left: 10px;
         background: rgb(211, 210, 210);
     }
+    .marker{
+        display: flex;
+        align-items: center;
+    }
 }
 article{
     background: rgb(241, 241, 241);
     text-align: center;
+    margin-top: -20px;
     font-family: $font-family-text;
+    height: 230px;
+    h2{
+        padding-top: 30px;
+    }
     button {
         height: 40px;
         width: 6Opx;
@@ -98,5 +110,30 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    .Resto-1{
+        &__card{
+            padding-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 260px;
+            background: white;
+        }
+        &--name{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+            .Heart{
+                font-size: 22px;
+                margin-right: 20px;
+            }
+    }
+    }
     
+}
+footer{
+    background: rgb(53, 48, 48);
+    color: white;
+    h4 {
+        font-family: $font-family-log-title;
+    }
 }

@@ -1,6 +1,6 @@
 h1 {
   font-family: Shrikhand;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   text-align: center;
 }
 
@@ -15,6 +15,8 @@ form {
   font-size: 17px;
   font-family: Roboto;
   text-align: center;
+  height: 40px;
+  margin-top: -15px;
 }
 
 form .Inpt {
@@ -24,10 +26,25 @@ form .Inpt {
   background: #d3d2d2;
 }
 
+form .marker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 article {
   background: #f1f1f1;
   text-align: center;
+  margin-top: -20px;
   font-family: Roboto;
+  height: 230px;
+}
+
+article h2 {
+  padding-top: 30px;
 }
 
 article button {
@@ -140,5 +157,37 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.Restaurants-places .Resto-1__card {
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 260px;
+  background: white;
+}
+
+.Restaurants-places .Resto-1--name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 6px;
+}
+
+.Restaurants-places .Resto-1--name .Heart {
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+footer {
+  background: #353030;
+  color: white;
+}
+
+footer h4 {
+  font-family: Shrikhand;
 }
 /*# sourceMappingURL=stylesaccueil.css.map */
