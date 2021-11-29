@@ -9,6 +9,13 @@ h1{
     text-align: center;
 
 }
+
+h3{
+    margin-left: 20px;  
+    margin-bottom:20px;
+    padding-top:30px;
+    font-size:22px;
+}
 form{
     display: flex;
     justify-content: center;
@@ -42,6 +49,7 @@ article{
         height: 40px;
         width: 6Opx;
         border-radius: 20px;
+        border-color: transparent;
         background: $color-secondary;
         margin-top: 10px;
         font-size: 14px;
@@ -61,8 +69,21 @@ body {
         display: flex;
         border-radius: 20px;
         margin-bottom: 20px;
+        margin-left:20px;
         background: rgb(241, 241, 241);
         width: 250px;
+        position: relative;
+        .btn_circle{
+            border-radius: 25px;
+            border-color: transparent;
+            width: 22px;
+            height: 22px;
+            color: white;
+            background: $color-primary;
+            position: absolute;
+            top:25%;
+            left:-8px;
+        }
         .Mobile-phone{
             display: flex;
             align-items: center;
@@ -76,8 +97,21 @@ body {
         display: flex;
         border-radius: 20px;
         background: rgb(241, 241, 241);
+        margin-left:20px;
         width: 250px;
         margin-bottom: 20px;
+        position: relative;
+        .btn_circle{
+            border-radius: 25px;
+            border-color: transparent;
+            width: 22px;
+            height: 22px;
+            color: white;
+            background: $color-primary;
+            position: absolute;
+            top: 30%;
+            left:-8px;
+        }
         .List{
             display: flex;
             align-items: center;
@@ -91,8 +125,21 @@ body {
     .Choose-restaurant{
         display: flex;
         border-radius: 20px;
+        margin-left: 20px;
         background: rgb(241, 241, 241);
         width: 250px;
+        position: relative;
+        .btn_circle{
+            border-radius: 25px;
+            border-color: transparent;
+            width: 22px;
+            height: 22px;
+            color: white;
+            background: $color-primary;
+            position: absolute;
+            top: 35%;
+            left: -8px;
+        }
         .Store{
             display: flex;
             align-items: center;
@@ -105,11 +152,15 @@ body {
     }
 }
 
-.Restaurants-places{
+.Restaurants{
     background: rgb(241, 241, 241);
+    width: 100%;
+    .Restaurants-places{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    margin-top: -25px;
+    }
     .Resto-1{
         &__card{
             padding-bottom: 10px;
@@ -117,22 +168,138 @@ body {
             border-radius: 20px;
             height: 260px;
             background: white;
+            position: relative;
         }
-        &--name{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6px;
-            .Heart{
-                font-size: 22px;
-                margin-right: 20px;
+            &--picture{
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                width: 320px;
+                height: 200px;
+            }
+            .New{
+                position: absolute;
+                left:68%;
+                top:20%;
+                background: #99cccc;
+                color: #339999;
+                width: 75px;
+                height: 30px;
+                font-weight: bold;
+                border-color: transparent;
+                
+            }
+            &--name{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 6px;
+                .Heart{
+                    font-size: 22px;
+                    margin-right: 20px;
+                    font-weight: lighter;
+                }
+            }  
+    }
+    .Resto-2{
+        &__card{
+            padding-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 260px;
+            background: white;
+            position: relative;
+        }
+            &--picture{
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+            }
+            .New{
+                position: absolute;
+                left:68%;
+                top:20%;
+                background: #99cccc;
+                color: #339999;
+                width: 85px;
+                height: 30px;
+                font-weight: bold;
+                border-color: transparent;
+                
+            }
+            &--name{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 6px;
+                .Heart{
+                    font-size: 22px;
+                    margin-right: 20px;
+                    font-weight: lighter;
+                }
+            }
+          
+    }
+    .Resto-3{
+        &__card{
+            padding-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 260px;
+            background: white;
+        }
+            &--picture{
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                width: 300px;
+                height: 200px;
+            }
+            &--name{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 6px;           
+                .Heart{
+                    font-size: 22px;
+                    margin-right: 20px;
+                    font-weight: lighter;
+                }
             }
     }
+
+    .Resto-4{
+        &__card{
+            padding-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 260px;
+            background: white;
+        }
+            &--picture{
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                width: 300px;
+                height: 200px;
+            }
+            &--name{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 6px;
+                .Heart{
+                    font-size: 22px;
+                    margin-right: 20px;
+                    font-weight: lighter;
+                }
+            }
     }
-    
 }
+
 footer{
     background: rgb(53, 48, 48);
     color: white;
+    height:230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 40px;
     h4 {
         font-family: $font-family-log-title;
     }

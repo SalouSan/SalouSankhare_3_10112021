@@ -1,7 +1,14 @@
 h1 {
   font-family: Shrikhand;
-  border-bottom: 1px solid white;
+  border-bottom: 0.5px solid #8f8e8e;
   text-align: center;
+}
+
+h3 {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  font-size: 22px;
 }
 
 form {
@@ -11,19 +18,19 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #d3d2d2;
+  background: #ececec;
   font-size: 17px;
   font-family: Roboto;
   text-align: center;
   height: 40px;
-  margin-top: -15px;
+  margin-top: -22px;
 }
 
 form .Inpt {
   font-size: 15px;
   border-style: none;
   margin-left: 10px;
-  background: #d3d2d2;
+  background: #ececec;
 }
 
 form .marker {
@@ -51,6 +58,7 @@ article button {
   height: 40px;
   width: 6Opx;
   border-radius: 20px;
+  border-color: transparent;
   background: #FF79DA;
   margin-top: 10px;
   font-size: 14px;
@@ -79,8 +87,24 @@ body {
   display: flex;
   border-radius: 20px;
   margin-bottom: 20px;
+  margin-left: 20px;
+  padding-top: 10px;
   background: #f1f1f1;
   width: 250px;
+  height: 60px;
+  position: relative;
+}
+
+.Fonctionnement .Choose-resto .btn_circle {
+  border-radius: 25px;
+  border-color: transparent;
+  width: 22px;
+  height: 22px;
+  color: white;
+  background: #9356DC;
+  position: absolute;
+  top: 35%;
+  left: -8px;
 }
 
 .Fonctionnement .Choose-resto .Mobile-phone {
@@ -90,7 +114,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 20px;
+  margin-left: 25px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: grey;
 }
 
 .Fonctionnement .Choose-resto__caption {
@@ -103,8 +130,24 @@ body {
   display: flex;
   border-radius: 20px;
   background: #f1f1f1;
+  margin-left: 20px;
   width: 250px;
+  height: 60px;
+  padding-top: 10px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.Fonctionnement .Compose-menu .btn_circle {
+  border-radius: 25px;
+  border-color: transparent;
+  width: 22px;
+  height: 22px;
+  color: white;
+  background: #9356DC;
+  position: absolute;
+  top: 30%;
+  left: -8px;
 }
 
 .Fonctionnement .Compose-menu .List {
@@ -114,7 +157,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 20px;
+  margin-left: 25px;
+  padding-bottom: 10px;
+  color: grey;
 }
 
 .Fonctionnement .Compose-menu__caption {
@@ -126,8 +171,24 @@ body {
   display: -ms-flexbox;
   display: flex;
   border-radius: 20px;
+  margin-left: 20px;
   background: #f1f1f1;
   width: 250px;
+  height: 60px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.Fonctionnement .Choose-restaurant .btn_circle {
+  border-radius: 25px;
+  border-color: transparent;
+  width: 22px;
+  height: 22px;
+  color: white;
+  background: #9356DC;
+  position: absolute;
+  top: 30%;
+  left: -8px;
 }
 
 .Fonctionnement .Choose-restaurant .Store {
@@ -137,7 +198,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 20px;
+  margin-left: 25px;
+  padding-bottom: 10px;
   color: #9356DC;
 }
 
@@ -145,46 +207,269 @@ body {
   margin-left: 20px;
 }
 
-.Restaurants-places {
+.Restaurants {
   background: #f1f1f1;
+  width: 105%;
+  margin-left: 0px;
+}
+
+.Restaurants .Restaurants-places {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -25px;
+  margin-left: 0px;
 }
 
-.Restaurants-places .Resto-1__card {
+.Restaurants .Resto-1__card {
   padding-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-radius: 20px;
-  height: 260px;
+  height: 240px;
   background: white;
+  position: relative;
 }
 
-.Restaurants-places .Resto-1--name {
+.Restaurants .Resto-1--picture {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 340px;
+  height: 180px;
+}
+
+.Restaurants .Resto-1 p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 9px;
+}
+
+.Restaurants .Resto-1 .New {
+  position: absolute;
+  left: 72%;
+  top: 6%;
+  background: #99cccc;
+  color: #339999;
+  width: 75px;
+  height: 30px;
+  font-weight: bold;
+  border-color: transparent;
+}
+
+.Restaurants .Resto-1--place {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 6px;
+  margin-top: -15px;
+  font-weight: 100;
+  font-size: 17px;
+  margin-left: 10px;
 }
 
-.Restaurants-places .Resto-1--name .Heart {
-  font-size: 22px;
+.Restaurants .Resto-1--place .Heart {
+  font-size: 25px;
   margin-right: 20px;
+  font-weight: 100;
+  position: absolute;
+  left: 85%;
+  bottom: 50%;
+}
+
+.Restaurants .Resto-2__card {
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  border-color: transparent;
+  height: 240px;
+  background: white;
+  position: relative;
+}
+
+.Restaurants .Resto-2--picture {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-color: transparent;
+  width: 340px;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.Restaurants .Resto-2 p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 9px;
+}
+
+.Restaurants .Resto-2 .New {
+  position: absolute;
+  left: 70%;
+  top: 6%;
+  background: #99cccc;
+  color: #339999;
+  width: 85px;
+  height: 30px;
+  font-weight: bold;
+  border-color: transparent;
+}
+
+.Restaurants .Resto-2--place {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -15px;
+  font-weight: 100;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.Restaurants .Resto-2--place .Heart {
+  font-size: 24px;
+  margin-right: 20px;
+  font-weight: lighter;
+  position: absolute;
+  left: 85%;
+  bottom: 50%;
+}
+
+.Restaurants .Resto-3__card {
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  height: 240px;
+  background: white;
+}
+
+.Restaurants .Resto-3--picture {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 340px;
+  height: 180px;
+}
+
+.Restaurants .Resto-3 p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 9px;
+}
+
+.Restaurants .Resto-3--place {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -15px;
+  font-weight: 100;
+  font-size: 17px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.Restaurants .Resto-3--place .Heart {
+  font-size: 24px;
+  margin-right: 20px;
+  font-weight: lighter;
+  position: absolute;
+  left: 85%;
+  bottom: 50%;
+}
+
+.Restaurants .Resto-4__card {
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  height: 240px;
+  background: white;
+}
+
+.Restaurants .Resto-4--picture {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 340px;
+  height: 180px;
+}
+
+.Restaurants .Resto-4 p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 9px;
+}
+
+.Restaurants .Resto-4--place {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -15px;
+  font-weight: 100;
+  font-size: 17px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.Restaurants .Resto-4--place .Heart {
+  font-size: 24px;
+  margin-right: 20px;
+  font-weight: lighter;
+  position: absolute;
+  left: 85%;
+  bottom: 50%;
 }
 
 footer {
   background: #353030;
   color: white;
+  height: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 40px;
+  width: 100%;
 }
 
 footer h4 {
