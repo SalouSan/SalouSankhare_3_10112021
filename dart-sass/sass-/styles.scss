@@ -4,12 +4,15 @@ $font-family-text: Roboto;
 $color-primary : #9356DC;
 $color-secondary: #FF79DA; 
 $border-and-checkingcolor: #99E2D0;
+
 %figure-layout{
 margin-left : 10px;
 margin-top: 12px;
 font-weight: bolder;
 font-size: 18px;
 }
+
+
 @mixin h3form {
     font-family: $font-family-text;
     font-weight: lighter;
@@ -48,24 +51,7 @@ font-size: 18px;
     margin-left:15px;
 
 }
-%btn_checking {
-            height: 70px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            position: absolute;
-            top: -2%;
-            left:93%;
-            width: 55px;
-            height: 73px;
-            background: #99E2D0;
-            border-color: transparent;
-            opacity: 0;
-            transition: transform;
-            transform: translateX(-20px);
-            transition-duration: 2s;
-            transition-delay: 150ms;
-            transition-timing-function: cubic-bezier(0.01, 1, 0.01, 1);
-}
+
 
 h1{
     text-align: center;
@@ -161,40 +147,49 @@ body{
 .Entrée-menu{
     text-align: left;
     animation: Slidedown 3s 100ms ease-in-out ;
-    &__card1{
+    &__card{
         @include menu-block (15px); 
-        position: relative;
+        position: relative;        
     }
-        .btn_checking{
-            @extend %btn_checking;
-            &:hover {
-                transform: rotateX(1turn) translateX(-28px);
-                opacity: 1;
-                animation-name: checking;
-                animation-duration: 2s;
-                animation-direction: alternate;
-                animation-iteration-count: 1;
-                animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-            }
-            .circle1{
-                transform: rotateZ(0turn);
-                transition-duration: 0.4s;
-                transition-delay: 150ms;
-                transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-            }
-            .Circle{
-                color: white;
-                font-size: 21px;
-                transition: transform;
-                transform: rotateX(0turn);
-                transition-duration: 3s;
-                transition-delay: 150ms;
-            }
-            :hover .circle1{
-                transform: rotateZ(1turn);
-                }
-            
+        &__card::before{
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: absolute;
+            content: '';
+            top: -2%;
+            left:93%;
+            width: 0px;
+            height: 0px;
+            background: #99E2D0;
+            border-color: transparent;
         }
+        &__card:hover::before{
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: absolute;
+            top: -2%;
+            left:93%;
+            width: 53px;
+            height: 73px;
+            background: #99E2D0;
+            border-color: transparent;
+            animation: checking 2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        &__card::after{
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            font-weight: 900;
+            left:98%;
+            opacity: 0;
+            bottom: 35%;
+            color: white;
+            font-size: 20px;
+            content: '\f058';
+        }
+        &__card:hover::after{
+            animation: rotate 2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
 
     &__card2{
         @include menu-block (15px);     
@@ -215,7 +210,7 @@ body{
 .Plats-menu {
     text-align: left;
     animation: Slidedown 3s 200ms ease-in-out ;
-    &__card1{
+    &__card{
         @include menu-block (15px);
     }
     &__card2{
@@ -232,7 +227,7 @@ body{
 .Dessert-menu {
     text-align: left;
     animation: Slidedown 3s 400ms ease-in-out ;
-    &__card1{
+    &__card{
         @include menu-block(15px);
     }
     &__card2{
@@ -286,11 +281,20 @@ footer {
         transform: translateX(0px);
         opacity: 0;
     }
-
     100%{
         transform: translateX(-28px);
-        opacity: 1;
+        opacity:1;
+    }
     
+}
+@keyframes rotate {
+    0%{
+        transform: translateX(0px) rotate(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(-28px) rotate(1turn);
+        opacity:1;
     }
 }
 
