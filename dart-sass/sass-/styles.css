@@ -164,12 +164,13 @@ body {
   position: absolute;
   top: -2%;
   left: 93%;
-  width: 53px;
+  width: 55px;
   height: 73px;
   background: #99E2D0;
   border-color: transparent;
   -webkit-animation: checking 2s cubic-bezier(0.19, 1, 0.22, 1);
           animation: checking 2s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow-x: scroll;
 }
 
 .Entrée-menu__card::after {
@@ -382,8 +383,8 @@ footer {
 
 @-webkit-keyframes checking {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
     opacity: 0;
   }
   100% {
@@ -395,8 +396,8 @@ footer {
 
 @keyframes checking {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
     opacity: 0;
   }
   100% {
@@ -408,8 +409,8 @@ footer {
 
 @-webkit-keyframes rotate {
   0% {
-    -webkit-transform: translateX(0px) rotate(0);
-            transform: translateX(0px) rotate(0);
+    -webkit-transform: translateX(-5px) rotate(0);
+            transform: translateX(-5px) rotate(0);
     opacity: 0;
   }
   100% {
@@ -421,8 +422,8 @@ footer {
 
 @keyframes rotate {
   0% {
-    -webkit-transform: translateX(0px) rotate(0);
-            transform: translateX(0px) rotate(0);
+    -webkit-transform: translateX(-5px) rotate(0);
+            transform: translateX(-5px) rotate(0);
     opacity: 0;
   }
   100% {
