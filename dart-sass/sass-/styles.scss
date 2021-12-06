@@ -4,14 +4,67 @@ $font-family-text: Roboto;
 $color-primary : #9356DC;
 $color-secondary: #FF79DA; 
 $border-and-checkingcolor: #99E2D0;
+$animation-check-button : checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+$animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
 
-%figure-layout{
-margin-left : 10px;
-margin-top: 12px;
-font-weight: bolder;
-font-size: 18px;
+%layout{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid;
+    border-radius: 25px;
+    border-top-left-radius: 40px ;
+    border-top-right-radius: 40px;
+    border-left: 3px solid;
+    border-right: 3px solid;
+    background-color: rgb(250, 250, 250);
+    border-color: rgb(250, 250, 250);
+    box-shadow: 0px 0px 0px 0px;  
+    margin-top: -47px;
 }
-
+%body{
+    font-family: $font-family-text;
+    background-color: rgb(250, 250, 250);
+    margin : 0 auto;
+    border : 1px solid black; 
+    max-width :750px;
+    position: relative;
+    cursor: pointer;
+}
+%price-style{
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top:-10px;
+    position: absolute;
+    left:80%;
+    top:52%;
+}
+%menu-name{
+    font-family: $font-family-text;
+    margin-left : 15px;
+    margin-top: 15px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+%btn-command{
+    background-color:$color-primary;
+    color: white;
+    width: 35%;
+    height: 40px;
+    border-radius: 20px; 
+    border-color: transparent;  
+    transform: scale(1); 
+    margin-left :33%;
+    margin-top:25px; 
+}
+@mixin menu-description ($width:100%){
+    font-weight: 100;
+    margin-left: 15px;
+    margin-top: -15px;
+    width:$width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @mixin h3form {
     font-family: $font-family-text;
@@ -21,7 +74,7 @@ font-size: 18px;
     width: 11%;
     margin-left: 15px;
 }
-@mixin titles ($size:16px) {
+@mixin Big-title ($size:16px) {
     font-family: $font-family-log-title;
     font-size: $size;
     
@@ -43,7 +96,7 @@ font-size: 18px;
     border: 2px double black; 
     border-radius: 15px;
     background-color: #FFFF;
-    width: 92%;
+    width: 360px;
     height: 70px;
     border-color: #FFFF;
     box-shadow: 3px 3px 3px 3px rgb(245, 245, 245);
@@ -51,11 +104,50 @@ font-size: 18px;
     margin-left:15px;
 
 }
+@mixin check-button ($width:0px, $height:0px){
+    &::before{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        position: absolute;
+        content: '';
+        top: -2%;
+        left:93%;
+        width: $width;
+        height: $height;
+        background: #99E2D0;
+        border-color: transparent;
+    }
+}
+@mixin validation-button($opacity:0) {
+    &::after{
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        font-weight: 900;
+        left:98%;
+        opacity: $opacity;
+        bottom: 35%;
+        color: white;
+        font-size: 20px;
+        content: '\f058';
+    }
+}
 
+@if (lightness($color-primary) > 25%) {
+    .btn_command:hover{
+        background-color:lighten($color-primary,10%);
+        box-shadow: 3px 3px 3px 3px black;
+    }
+} 
+@else {
+    .btn_command:hover{
+    background-color: darken($color-primary,10%);
+    box-shadow: 0px 0px 0px 0px;
+    }
+}
 
 h1{
     text-align: center;
-    @include titles (25px);
+    @include Big-title (25px);
     &::before{
         border: 3px solid black;
     }
@@ -64,17 +156,42 @@ h1{
     
 .HeadT{
     display: flex;
-    @include titles (20px);
+    @include Big-title (20px);
     position: relative;
     margin-left: 15px;
  
 }
-.heart{
-    font-size: 26px;
+.Heart{
+    height: 20px;
+    width: 20px;
     position: absolute;
-    top :30%;
-    left: 85%;
-    font-weight: lighter;
+    left:85%;
+    top:40%;
+    transform:rotate(45deg);
+    background-color: white;
+}
+
+.Heart::before{
+    position: absolute;
+    content: '';
+    background-color: white;
+    height: 60%;
+    width: 100%;
+    top: -59%;
+    border-radius: 75px 75px 0 0; 
+    
+}
+
+.Heart::after{
+    position: absolute;
+    content: '';
+    background-color: white;
+    height: 60%;
+    width: 100%;
+    transform: rotate(-90deg);
+    top: 20%;
+    right: 79%;
+    border-radius: 75px 75px 0 0;
 }
 
 .Image{
@@ -83,18 +200,7 @@ h1{
     object-fit: cover;
 }
 .Principal{
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid;
-    border-radius: 25px;
-    border-top-left-radius: 40px ;
-    border-top-right-radius: 40px;
-    border-left: 3px solid;
-    border-right: 3px solid;
-    background-color: rgb(250, 250, 250);
-    border-color: rgb(250, 250, 250);
-    box-shadow: 0px 0px 0px 0px;  
-    margin-top: -47px;
+    @extend %layout;    
 
 }
 main{
@@ -103,25 +209,21 @@ main{
 }
 
 .resto{
-    width: 100%;
-    
+    width: 100%; 
 }
-figcaption{
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    font-weight: 100;
-    margin-top: 5px;
-}
+
 h3{
     @include h3form;
     text-align: center;
 }
-
-h4{
-    @include titles(13px);
-
+.le-menu{
+    position: relative;
 }
+.le-menu:hover{
+    width: 80%;
+}
+
+
 header{
     position: relative;
     
@@ -136,137 +238,130 @@ header{
 
 
 body{
-    font-family: $font-family-text;
-    background-color: rgb(250, 250, 250);
-    margin : 0 auto;
-    border : 1px solid black; 
-    max-width :750px;
-    position: relative;
+    @extend %body;
 }
 
 .Entrée-menu{
     text-align: left;
     animation: Slidedown 3s 100ms ease-in-out ;
+    h4{
+        @extend %menu-name;
+    }
     &__card{
         @include menu-block (15px); 
-        position: relative;        
+        position: relative;
+        @include check-button($width:0px, $height:0px);
+        @include validation-button ($opacity:0);
+        
     }
-        &__card::before{
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            position: absolute;
-            content: '';
-            top: -2%;
-            left:93%;
-            width: 0px;
-            height: 0px;
-            background: #99E2D0;
-            border-color: transparent;
+        &__card:hover{
+            @include check-button($width:55px, $height:73px);
+            @include validation-button ($opacity:1);
         }
         &__card:hover::before{
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            position: absolute;
-            top: -2%;
-            left:93%;
-            width: 55px;
-            height: 73px;
-            background: #99E2D0;
-            border-color: transparent;
-            animation: checking 2s cubic-bezier(0.19, 1, 0.22, 1);
-            overflow-x: scroll;
-        }
-        &__card::after{
-            font-family: "Font Awesome 5 Free";
-            position: absolute;
-            font-weight: 900;
-            left:98%;
-            opacity: 0;
-            bottom: 35%;
-            color: white;
-            font-size: 20px;
-            content: '\f058';
+            animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+            
         }
         &__card:hover::after{
-            animation: rotate 2s cubic-bezier(0.19, 1, 0.22, 1);
+            animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
         }
+            &--title{
+                @include menu-description (100%);
+                &:hover{
+                    @include menu-description (80%);
+                }
+            }
+            &--price{
+                @extend %price-style;
+            }
         
-
-    &__card2{
-        @include menu-block (15px);     
-    }
-
-    &__card3{
-        @include menu-block (15px);      
-    }
-    &__card4{
-        @include menu-block (15px); 
-    }
-    &--title{
-      @extend %figure-layout  
-    }
 }
 
 
 .Plats-menu {
     text-align: left;
     animation: Slidedown 3s 200ms ease-in-out ;
+    h4{
+        @extend %menu-name;
+    }
     &__card{
         @include menu-block (15px);
+        position: relative;
+        @include check-button($width:0px, $height:0px);
+        @include validation-button ($opacity:0);
+        
     }
-    &__card2{
-        @include menu-block(15px);
-    }
-    &__card3{
-        @include menu-block (15px);
-    }
-    &--title{
-        @extend %figure-layout  
-      }
+        &__card:hover{
+            @include check-button($width:55px, $height:73px);
+            @include validation-button ($opacity:1);
+        }
+        &__card:hover::before{
+            animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+            
+        }
+        &__card:hover::after{
+            animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    
+            &--title{
+                @include menu-description (78%);
+                &:hover{
+                    @include menu-description (80%);
+                }
+            }
+            &--price{
+                @extend %price-style;
+            }
 }
 
 .Dessert-menu {
     text-align: left;
     animation: Slidedown 3s 400ms ease-in-out ;
+    h4{
+        @extend %menu-name;
+    }
     &__card{
         @include menu-block(15px);
+        position: relative;
+        @include check-button($width:0px, $height:0px);
+        @include validation-button ($opacity:0);
     }
-    &__card2{
-        @include menu-block(15px);
-    }
-    &__card3{
-        @include menu-block(15px);
-    }
-    &--title{
-        @extend %figure-layout  
-      }
-}
+        &__card:hover{
+            @include check-button($width:55px, $height:73px);
+            @include validation-button ($opacity:1);
+        }
+        &__card:hover::before{
+            animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+            
+        }
+        &__card:hover::after{
+            animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
 
+        &--title{
+            @include menu-description (100%);
+            &:hover{
+                @include menu-description (80%);
+            }
+        }
+        &--price{
+            @extend %price-style;
+        }
+}
 
 
 .btn_command{
-    background-color:$color-primary;
-    color: white;
-    width: 35%;
-    height: 40px;
-    border-radius: 20px; 
-    border-color: transparent;  
-    transform: scale(1); 
-    margin-left :33%;
-    margin-top:25px;
-    &:hover{
-        background-color: $color-secondary;
-    }
-    
+    @extend %btn-command;
 }
-
 
 
 footer {
     @include footer;
     
-    
 }
+    h5{
+        @include Big-title(18px)
+    }
 @keyframes Slidedown {
     from {
     transform : translateY(200px);
@@ -284,7 +379,7 @@ footer {
     }
     100%{
         transform: translateX(-28px);
-        opacity:1;
+        opacity:1;    
     }
     
 }
@@ -296,6 +391,7 @@ footer {
     100%{
         transform: translateX(-28px) rotate(1turn);
         opacity:1;
+
     }
 }
 

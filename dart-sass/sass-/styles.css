@@ -1,9 +1,69 @@
 @charset "UTF-8";
-.Entrée-menu--title, .Plats-menu--title, .Dessert-menu--title {
-  margin-left: 10px;
-  margin-top: 12px;
+.Principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top: 1px solid;
+  border-radius: 25px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  background-color: #fafafa;
+  border-color: #fafafa;
+  -webkit-box-shadow: 0px 0px 0px 0px;
+          box-shadow: 0px 0px 0px 0px;
+  margin-top: -47px;
+}
+
+body {
+  font-family: Roboto;
+  background-color: #fafafa;
+  margin: 0 auto;
+  border: 1px solid black;
+  max-width: 750px;
+  position: relative;
+  cursor: pointer;
+}
+
+.Entrée-menu--price, .Plats-menu--price, .Dessert-menu--price {
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: -10px;
+  position: absolute;
+  left: 80%;
+  top: 52%;
+}
+
+.Entrée-menu h4, .Plats-menu h4, .Dessert-menu h4 {
+  font-family: Roboto;
+  margin-left: 15px;
+  margin-top: 15px;
   font-weight: bolder;
   font-size: 18px;
+}
+
+.btn_command {
+  background-color: #9356DC;
+  color: white;
+  width: 35%;
+  height: 40px;
+  border-radius: 20px;
+  border-color: transparent;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  margin-left: 33%;
+  margin-top: 25px;
+}
+
+.btn_command:hover {
+  background-color: #ae80e5;
+  -webkit-box-shadow: 3px 3px 3px 3px black;
+          box-shadow: 3px 3px 3px 3px black;
 }
 
 h1 {
@@ -26,12 +86,38 @@ h1::before {
   margin-left: 15px;
 }
 
-.heart {
-  font-size: 26px;
+.Heart {
+  height: 20px;
+  width: 20px;
   position: absolute;
-  top: 30%;
   left: 85%;
-  font-weight: lighter;
+  top: 40%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: white;
+}
+
+.Heart::before {
+  position: absolute;
+  content: '';
+  background-color: white;
+  height: 60%;
+  width: 100%;
+  top: -59%;
+  border-radius: 75px 75px 0 0;
+}
+
+.Heart::after {
+  position: absolute;
+  content: '';
+  background-color: white;
+  height: 60%;
+  width: 100%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  top: 20%;
+  right: 79%;
+  border-radius: 75px 75px 0 0;
 }
 
 .Image {
@@ -41,27 +127,6 @@ h1::before {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.Principal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-top: 1px solid;
-  border-radius: 25px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-left: 3px solid;
-  border-right: 3px solid;
-  background-color: #fafafa;
-  border-color: #fafafa;
-  -webkit-box-shadow: 0px 0px 0px 0px;
-          box-shadow: 0px 0px 0px 0px;
-  margin-top: -47px;
 }
 
 main {
@@ -78,18 +143,6 @@ main {
   width: 100%;
 }
 
-figcaption {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 15px;
-  font-weight: 100;
-  margin-top: 5px;
-}
-
 h3 {
   font-family: Roboto;
   font-weight: lighter;
@@ -100,9 +153,12 @@ h3 {
   text-align: center;
 }
 
-h4 {
-  font-family: Shrikhand;
-  font-size: 13px;
+.le-menu {
+  position: relative;
+}
+
+.le-menu:hover {
+  width: 80%;
 }
 
 header {
@@ -116,15 +172,6 @@ header {
   font-size: 20px;
 }
 
-body {
-  font-family: Roboto;
-  background-color: #fafafa;
-  margin: 0 auto;
-  border: 1px solid black;
-  max-width: 750px;
-  position: relative;
-}
-
 .Entrée-menu {
   text-align: left;
   -webkit-animation: Slidedown 3s 100ms ease-in-out;
@@ -135,7 +182,7 @@ body {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
-  width: 92%;
+  width: 360px;
   height: 70px;
   border-color: #FFFF;
   -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
@@ -158,21 +205,6 @@ body {
   border-color: transparent;
 }
 
-.Entrée-menu__card:hover::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  top: -2%;
-  left: 93%;
-  width: 55px;
-  height: 73px;
-  background: #99E2D0;
-  border-color: transparent;
-  -webkit-animation: checking 2s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: checking 2s cubic-bezier(0.19, 1, 0.22, 1);
-  overflow-x: scroll;
-}
-
 .Entrée-menu__card::after {
   font-family: "Font Awesome 5 Free";
   position: absolute;
@@ -185,48 +217,59 @@ body {
   content: '\f058';
 }
 
+.Entrée-menu__card:hover::before {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -2%;
+  left: 93%;
+  width: 55px;
+  height: 73px;
+  background: #99E2D0;
+  border-color: transparent;
+}
+
 .Entrée-menu__card:hover::after {
-  -webkit-animation: rotate 2s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: rotate 2s cubic-bezier(0.19, 1, 0.22, 1);
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  left: 98%;
+  opacity: 1;
+  bottom: 35%;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
 }
 
-.Entrée-menu__card2 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
-  margin-left: 15px;
+.Entrée-menu__card:hover::before {
+  -webkit-animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+          animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.Entrée-menu__card3 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
-  margin-left: 15px;
+.Entrée-menu__card:hover::after {
+  -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+          animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.Entrée-menu__card4 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
+.Entrée-menu--title {
+  font-weight: 100;
   margin-left: 15px;
+  margin-top: -15px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Entrée-menu--title:hover {
+  font-weight: 100;
+  margin-left: 15px;
+  margin-top: -15px;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .Plats-menu {
@@ -239,39 +282,94 @@ body {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
-  width: 92%;
+  width: 360px;
   height: 70px;
   border-color: #FFFF;
   -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
           box-shadow: 3px 3px 3px 3px whitesmoke;
   margin-bottom: 15px;
   margin-left: 15px;
+  position: relative;
 }
 
-.Plats-menu__card2 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
-  margin-left: 15px;
+.Plats-menu__card::before {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -2%;
+  left: 93%;
+  width: 0px;
+  height: 0px;
+  background: #99E2D0;
+  border-color: transparent;
 }
 
-.Plats-menu__card3 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
+.Plats-menu__card::after {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  left: 98%;
+  opacity: 0;
+  bottom: 35%;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
+}
+
+.Plats-menu__card:hover::before {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -2%;
+  left: 93%;
+  width: 55px;
+  height: 73px;
+  background: #99E2D0;
+  border-color: transparent;
+}
+
+.Plats-menu__card:hover::after {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  left: 98%;
+  opacity: 1;
+  bottom: 35%;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
+}
+
+.Plats-menu__card:hover::before {
+  -webkit-animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+          animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Plats-menu__card:hover::after {
+  -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+          animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Plats-menu--title {
+  font-weight: 100;
   margin-left: 15px;
+  margin-top: -15px;
+  width: 78%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Plats-menu--title:hover {
+  font-weight: 100;
+  margin-left: 15px;
+  margin-top: -15px;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .Dessert-menu {
@@ -284,56 +382,94 @@ body {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
-  width: 92%;
+  width: 360px;
   height: 70px;
   border-color: #FFFF;
   -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
           box-shadow: 3px 3px 3px 3px whitesmoke;
   margin-bottom: 15px;
   margin-left: 15px;
+  position: relative;
 }
 
-.Dessert-menu__card2 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
-  margin-left: 15px;
-}
-
-.Dessert-menu__card3 {
-  border: 2px double black;
-  border-radius: 15px;
-  background-color: #FFFF;
-  width: 92%;
-  height: 70px;
-  border-color: #FFFF;
-  -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
-          box-shadow: 3px 3px 3px 3px whitesmoke;
-  margin-bottom: 15px;
-  margin-left: 15px;
-}
-
-.btn_command {
-  background-color: #9356DC;
-  color: white;
-  width: 35%;
-  height: 40px;
-  border-radius: 20px;
+.Dessert-menu__card::before {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -2%;
+  left: 93%;
+  width: 0px;
+  height: 0px;
+  background: #99E2D0;
   border-color: transparent;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  margin-left: 33%;
-  margin-top: 25px;
 }
 
-.btn_command:hover {
-  background-color: #FF79DA;
+.Dessert-menu__card::after {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  left: 98%;
+  opacity: 0;
+  bottom: 35%;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
+}
+
+.Dessert-menu__card:hover::before {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -2%;
+  left: 93%;
+  width: 55px;
+  height: 73px;
+  background: #99E2D0;
+  border-color: transparent;
+}
+
+.Dessert-menu__card:hover::after {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  left: 98%;
+  opacity: 1;
+  bottom: 35%;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
+}
+
+.Dessert-menu__card:hover::before {
+  -webkit-animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+          animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Dessert-menu__card:hover::after {
+  -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+          animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.Dessert-menu--title {
+  font-weight: 100;
+  margin-left: 15px;
+  margin-top: -15px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Dessert-menu--title:hover {
+  font-weight: 100;
+  margin-left: 15px;
+  margin-top: -15px;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 footer {
@@ -353,6 +489,11 @@ footer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+h5 {
+  font-family: Shrikhand;
+  font-size: 18px;
 }
 
 @-webkit-keyframes Slidedown {
