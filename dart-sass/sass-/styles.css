@@ -61,9 +61,9 @@ body {
 }
 
 .btn_command:hover {
-  background-color: #ae80e5;
-  -webkit-box-shadow: 3px 3px 3px 3px black;
-          box-shadow: 3px 3px 3px 3px black;
+  background-color: #ff93e1;
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+          box-shadow: 1px 1px 1px 1px black;
 }
 
 h1 {
@@ -95,6 +95,8 @@ h1::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   background-color: white;
+  margin: 0 auto;
+  padding: 0 auto;
 }
 
 .Heart::before {
@@ -105,6 +107,7 @@ h1::before {
   width: 100%;
   top: -59%;
   border-radius: 75px 75px 0 0;
+  border: 1px solid black;
 }
 
 .Heart::after {
@@ -129,6 +132,11 @@ h1::before {
      object-fit: cover;
 }
 
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,6 +149,9 @@ main {
 
 .resto {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
 }
 
 h3 {
@@ -148,7 +159,7 @@ h3 {
   font-weight: lighter;
   font-size: 16px;
   border-bottom: 2px solid #99E2D0;
-  width: 11%;
+  max-width: 11%;
   margin-left: 15px;
   text-align: center;
 }
@@ -182,13 +193,13 @@ header {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
-  width: 360px;
+  max-width: 92%;
   height: 70px;
   border-color: #FFFF;
   -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
           box-shadow: 3px 3px 3px 3px whitesmoke;
   margin-bottom: 15px;
-  margin-left: 15px;
+  margin-left: 10px;
   position: relative;
 }
 
@@ -257,6 +268,7 @@ header {
   margin-left: 15px;
   margin-top: -15px;
   width: 100%;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -267,6 +279,7 @@ header {
   margin-left: 15px;
   margin-top: -15px;
   width: 80%;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -282,13 +295,13 @@ header {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
-  width: 360px;
+  max-width: 92%;
   height: 70px;
   border-color: #FFFF;
   -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
           box-shadow: 3px 3px 3px 3px whitesmoke;
   margin-bottom: 15px;
-  margin-left: 15px;
+  margin-left: 10px;
   position: relative;
 }
 
@@ -357,6 +370,7 @@ header {
   margin-left: 15px;
   margin-top: -15px;
   width: 78%;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -367,6 +381,7 @@ header {
   margin-left: 15px;
   margin-top: -15px;
   width: 80%;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -382,13 +397,13 @@ header {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
-  width: 360px;
+  max-width: 92%;
   height: 70px;
   border-color: #FFFF;
   -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
           box-shadow: 3px 3px 3px 3px whitesmoke;
   margin-bottom: 15px;
-  margin-left: 15px;
+  margin-left: 10px;
   position: relative;
 }
 
@@ -457,6 +472,7 @@ header {
   margin-left: 15px;
   margin-top: -15px;
   width: 100%;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -467,6 +483,7 @@ header {
   margin-left: 15px;
   margin-top: -15px;
   width: 80%;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -489,6 +506,8 @@ footer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  padding-left: 20px;
+  padding-bottom: 30px;
 }
 
 h5 {
