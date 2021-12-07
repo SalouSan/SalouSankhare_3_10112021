@@ -1,6 +1,8 @@
 h1 {
   font-family: Shrikhand;
-  border-bottom: 0.5px solid #8f8e8e;
+  border-bottom: 0.5px groove #f7f7f7;
+  -webkit-box-shadow: 0px 3px 0px 0px #e0e0e0;
+          box-shadow: 0px 3px 0px 0px #e0e0e0;
   text-align: center;
 }
 
@@ -28,7 +30,7 @@ form {
   font-family: Roboto;
   text-align: center;
   height: 40px;
-  margin-top: -22px;
+  margin-top: -20px;
 }
 
 form .Inpt {
@@ -62,7 +64,7 @@ article h2 {
 
 article button {
   height: 40px;
-  width: 6Opx;
+  width: 200px;
   border-radius: 20px;
   border-color: transparent;
   background: #FF79DA;
@@ -215,7 +217,7 @@ body {
 
 .Restaurants {
   background: #f1f1f1;
-  width: 105%;
+  width: 100%;
   margin-left: 0px;
 }
 
@@ -291,21 +293,14 @@ body {
   margin-left: 10px;
 }
 
-.Restaurants .New-Resto--place .Heart {
-  font-size: 25px;
-  margin-right: 20px;
-  font-weight: 100;
-  position: absolute;
-  left: 85%;
-  bottom: 50%;
-}
-
 .Restaurants .Resto__card {
   padding-bottom: 10px;
   border: 1px solid transparent;
   border-radius: 20px;
   height: 240px;
   background: white;
+  position: relative;
+  position: relative;
 }
 
 .Restaurants .Resto--picture {
@@ -340,19 +335,48 @@ body {
   position: relative;
 }
 
-.Restaurants .Resto--place .Heart {
-  font-size: 24px;
-  margin-right: 20px;
-  font-weight: lighter;
+.Heart {
+  position: relative;
+}
+
+.Heart::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f004';
   position: absolute;
-  left: 85%;
-  bottom: 50%;
+  font-weight: 100;
+  bottom: 10%;
+  left: 90%;
+  font-size: 24px;
+}
+
+.Heart:hover::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f004';
+  position: absolute;
+  bottom: 10%;
+  left: 90%;
+  font-weight: 900;
+  -webkit-animation-name: remplissage;
+          animation-name: remplissage;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.Heart:not(:hover)::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f004';
+  position: absolute;
+  font-weight: 100;
+  bottom: 10%;
+  left: 90%;
+  font-size: 24px;
 }
 
 footer {
   background: #353030;
   color: white;
-  height: 230px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,11 +387,112 @@ footer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  height: 230px;
   margin-top: 40px;
-  width: 100%;
+  width: 99%;
+  padding-left: 20px;
+  padding-bottom: 30px;
 }
 
 footer h4 {
   font-family: Shrikhand;
+}
+
+@-webkit-keyframes remplissage {
+  0% {
+    -webkit-transform: scaleZ(0);
+            transform: scaleZ(0);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    color: #9356DC;
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scaleZ(0.5);
+            transform: scaleZ(0.5);
+    color: #9356DC;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    opacity: 0.25;
+  }
+  50% {
+    -webkit-transform: scaleZ(0.75);
+            transform: scaleZ(0.75);
+    color: #9356DC;
+    opacity: 0.5;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  75% {
+    -webkit-transform: scaleZ(1);
+            transform: scaleZ(1);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    color: #9356DC;
+    opacity: 0.75;
+    -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  100% {
+    -webkit-transform: scaleZ(1.1);
+            transform: scaleZ(1.1);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    color: #9356DC;
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+@keyframes remplissage {
+  0% {
+    -webkit-transform: scaleZ(0);
+            transform: scaleZ(0);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    color: #9356DC;
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scaleZ(0.5);
+            transform: scaleZ(0.5);
+    color: #9356DC;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    opacity: 0.25;
+  }
+  50% {
+    -webkit-transform: scaleZ(0.75);
+            transform: scaleZ(0.75);
+    color: #9356DC;
+    opacity: 0.5;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  75% {
+    -webkit-transform: scaleZ(1);
+            transform: scaleZ(1);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    color: #9356DC;
+    opacity: 0.75;
+    -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  100% {
+    -webkit-transform: scaleZ(1.1);
+            transform: scaleZ(1.1);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    color: #9356DC;
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
 }
 /*# sourceMappingURL=stylesaccueil.css.map */
