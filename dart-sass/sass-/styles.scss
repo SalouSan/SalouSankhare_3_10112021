@@ -121,12 +121,12 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
         border-color: transparent;
     }
 }
-@mixin validation-button($opacity:0) {
+@mixin validation-button($opacity:0,$left:98%) {
     &::after{
         font-family: "Font Awesome 5 Free";
         position: absolute;
         font-weight: 900;
-        left:98%;
+        left:$left;
         opacity: $opacity;
         bottom: 35%;
         color: white;
@@ -165,39 +165,22 @@ h1{
  
 }
 .Heart{
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    left:85%;
-    top:40%;
-    transform:rotate(45deg);
-    background-color: white;
+    position: relative;
     margin : 0 auto;
     padding: 0 auto;
 }
 
 .Heart::before{
+    font-family: "Font Awesome 5 Free";
+    content: '\f004';
     position: absolute;
-    content: '';
+    font-weight: 100;
+    font-size: 24px;
     background-color: white;
-    height: 60%;
-    width: 100%;
-    top: -59%;
-    border-radius: 75px 75px 0 0; 
-    border : 1px solid black;
+    top: 40%;
+    left: 89%;
+   
     
-}
-
-.Heart::after{
-    position: absolute;
-    content: '';
-    background-color: white;
-    height: 60%;
-    width: 100%;
-    transform: rotate(-90deg);
-    top: 20%;
-    right: 79%;
-    border-radius: 75px 75px 0 0;
 }
 
 .Image{
@@ -261,14 +244,21 @@ body{
     }
     &__card{
         @include menu-block (15px); 
+        @media screen and (min-width:750px) {
+            @include menu-block;
+        }
         position: relative;
         @include check-button($width:0px, $height:0px);
         @include validation-button ($opacity:0);
         
     }
         &__card:hover{
+            @media screen and (min-width:750px){
+                @include check-button($width:80px, $height:83px);
+                @include validation-button ($opacity:1,$left:45%);
+            }
             @include check-button($width:55px, $height:73px);
-            @include validation-button ($opacity:1);
+            @include validation-button ($opacity:1,$left:98%);
         }
         &__card:hover::before{
             animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -387,7 +377,7 @@ footer {
 }
 @keyframes checking {
     0%{
-        transform: translateX(-5px);
+        transform: translateX(28px);
         opacity: 0;
     }
     100%{
