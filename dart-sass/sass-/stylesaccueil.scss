@@ -27,16 +27,19 @@ $color-secondary: #FF79DA;
     width: 50px;
     height: 50px;
     display: inline-block;
+    margin-right: 30px;
     vertical-align: middle;
     position: relative;
 }
 .loader-animation{
     background-color: $color-primary;
     height: 100%;
+    line-height: 500px;
     font-size: 24px;
     color: white;
     width: 100%;
-    line-height: 500px;
+    z-index: 10;
+    animation: page-chargement 3s linear 150ms ;
 }
     .loader-animation__spiner{
         border-radius: 50px;
@@ -54,15 +57,29 @@ $color-secondary: #FF79DA;
         border-radius: 50px;
         border: 6px solid transparent;
         border-top-color:#FFF;
-        animation : loading-spiner 2s linear 0s infinite;
+        animation : loading-spiner 3s linear 0s 6;
     }
 @keyframes loading-spiner{
     0%{
         transform: rotate(0deg);
+        opacity: 1;
     }
     100%{
         transform: rotate(360deg);
+        opacity: 0;
     }
+}
+@keyframes page-chargement {
+    0%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateX(-299px);
+        opacity: 0;
+    }
+    
 }
 h1{
     font-family: Shrikhand;
@@ -72,7 +89,11 @@ h1{
 }
 
 h3{
-    margin-left: 20px;  
+    margin-left: 20px;
+    @media screen and (min-width:750px) {
+        margin-top: 5px;
+        
+    }
     margin-bottom:30px;
     padding-top:30px;
     font-size:22px;
@@ -110,6 +131,7 @@ article{
     width: 100%;
     h2{
         padding-top: 30px;
+
     }
     button {
         height: 40px;
@@ -127,17 +149,40 @@ article{
 body {
     font-family: $font-family-text; 
 }
+
+.Page-Accueil{
+    animation: Affichage 3s ease-in-out;
+    animation-delay:4000ms;
+    z-index: -1;
+}
+
+@keyframes Affichage {
+    0%{
+        transform: translateX(-2999px);
+        opacity: 0;
+        display: none;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
 .Fonctionnement{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
     @media screen and (min-width:750px) {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+        margin-top: 5px;
     }
     .Choose-resto{
         display: flex;
+        @media screen and (min-width:750px){
+            margin-top: 30px;
+        }
         border-radius: 20px;
         margin-bottom: 20px;
         margin-left:20px;
@@ -172,6 +217,9 @@ body {
     .Compose-menu{
         display: flex;
         border-radius: 20px;
+        @media screen and (min-width:750px){
+            margin-top: 25px;
+        }
         background: rgb(241, 241, 241);
         margin-left:20px;
         width: 250px;
@@ -187,7 +235,7 @@ body {
             color: white;
             background: $color-primary;
             position: absolute;
-            top: 30%;
+            top: 35%;
             left:-8px;
         }
         .List{
@@ -219,7 +267,7 @@ body {
             color: white;
             background: $color-primary;
             position: absolute;
-            top: 30%;
+            top: 35%;
             left: -8px;
         }
         .Store{
@@ -241,6 +289,11 @@ body {
     width: 100%;
     margin-left: 0px;
     .Restaurants-places{
+    @media screen and (min-width:750px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -360,6 +413,9 @@ body {
     
 footer{
     @include footer;
+    @media screen and (min-width:750px) {
+        box-sizing: border-box;
+    }
     h4 {
         font-family: $font-family-log-title;
     }
