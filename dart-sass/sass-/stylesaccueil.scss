@@ -75,6 +75,11 @@ $color-secondary: #FF79DA;
     border-color: transparent;
     background: $color-secondary;
     margin-top: 10px;
+    padding-top:10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
     font-size: 14px;
     color: white;
     font-family: Roboto;
@@ -155,21 +160,11 @@ $color-secondary: #FF79DA;
         opacity: 1;
         z-index: 1000;
     }
-    25%{
-        transform: translateX(0px);
-        opacity: 1;
-        z-index: 1000;
-    }
 
     50%{
         transform: translateX(0px);
         opacity: 1;
-        z-index: 1000;
-    }
-
-    75%{
-        transform: translateX(-140px);
-        opacity: 1;
+        animation-timing-function: cubic-bezier(0.03, 1, 1, 1);
         z-index: 1000;
     }
 
@@ -237,11 +232,12 @@ article{
         padding-top: 30px;
     
     }
-    .Link{
-        color: white;
+    .btn{
+        display: flex;
+        justify-content: center;
         
     }
-        Button {
+        .btn--link {
         @extend %Article-button;
         }
     

@@ -33,13 +33,22 @@
   max-width: 90%;
 }
 
-article Button {
+article .btn--link {
   height: 40px;
   width: 200px;
   border-radius: 20px;
   border-color: transparent;
   background: #FF79DA;
   margin-top: 10px;
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-weight: bold;
   font-size: 14px;
   color: white;
   font-family: Roboto;
@@ -156,22 +165,12 @@ article Button {
     opacity: 1;
     z-index: 1000;
   }
-  25% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
-    z-index: 1000;
-  }
   50% {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
     opacity: 1;
-    z-index: 1000;
-  }
-  75% {
-    -webkit-transform: translateX(-140px);
-            transform: translateX(-140px);
-    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.03, 1, 1, 1);
+            animation-timing-function: cubic-bezier(0.03, 1, 1, 1);
     z-index: 1000;
   }
   100% {
@@ -189,22 +188,12 @@ article Button {
     opacity: 1;
     z-index: 1000;
   }
-  25% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
-    z-index: 1000;
-  }
   50% {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
     opacity: 1;
-    z-index: 1000;
-  }
-  75% {
-    -webkit-transform: translateX(-140px);
-            transform: translateX(-140px);
-    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.03, 1, 1, 1);
+            animation-timing-function: cubic-bezier(0.03, 1, 1, 1);
     z-index: 1000;
   }
   100% {
@@ -291,8 +280,13 @@ article h2 {
   padding-top: 30px;
 }
 
-article .Link {
-  color: white;
+article .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body {
