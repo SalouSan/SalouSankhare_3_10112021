@@ -23,7 +23,6 @@ body {
   font-family: Roboto;
   background-color: #fafafa;
   margin: 0 auto;
-  border: 1px solid black;
   max-width: 750px;
   position: relative;
   cursor: pointer;
@@ -259,7 +258,6 @@ main {
   content: '';
   top: -35%;
   left: 96%;
-  max-width: 95%;
   width: 56px;
   height: 70px;
   background: #99E2D0;
@@ -270,12 +268,13 @@ main {
   font-family: "Font Awesome 5 Free";
   position: absolute;
   font-weight: 900;
-  top: 40%;
+  top: 20%;
   left: 102%;
   opacity: 0;
   color: white;
   font-size: 20px;
   content: '\f058';
+  max-width: 95%;
 }
 
 .le-menu1:hover::after {
@@ -288,11 +287,11 @@ main {
   font-weight: 900;
   top: 20%;
   left: 102%;
-  max-width: 95%;
   opacity: 1;
   color: white;
   font-size: 20px;
   content: '\f058';
+  max-width: 95%;
 }
 
 h3 {
@@ -340,16 +339,6 @@ h3 {
     width: 370px;
     position: relative;
   }
-}
-
-.Entree-menu__card:hover::before {
-  -webkit-animation: checking 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          animation: checking 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.Entree-menu__card:hover::after {
-  -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .Entree-menu--title {
@@ -411,16 +400,6 @@ h3 {
   }
 }
 
-.Plats-menu__card:hover::before {
-  -webkit-animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.Plats-menu__card:hover::after {
-  -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
 .Plats-menu--title {
   font-weight: 100;
   margin-left: 15px;
@@ -479,21 +458,11 @@ h3 {
   }
 }
 
-.Dessert-menu__card:hover::before {
-  -webkit-animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.Dessert-menu__card:hover::after {
-  -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
 .Dessert-menu--title {
   font-weight: 100;
   margin-left: 15px;
   margin-top: -15px;
-  width: 100%;
+  width: 80%;
   font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
@@ -516,7 +485,7 @@ footer {
   font-family: Roboto;
   color: white;
   font-size: 15px;
-  height: 200px;
+  height: 230px;
   margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;

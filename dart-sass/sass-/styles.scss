@@ -25,7 +25,6 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     font-family: $font-family-text;
     background-color: rgb(250, 250, 250);
     margin : 0 auto;
-    border : 1px solid black; 
     max-width :750px;
     position: relative;
     cursor: pointer;
@@ -86,7 +85,7 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     font-family: $font-family-text;
     color: white;
     font-size: 15px;
-    height: 200px;
+    height: 230px;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -108,32 +107,32 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
 
 }
 @mixin check-button ($width:0px, $height:0px){
-    &::before{
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        position: absolute;
-        content: '';
-        top: -2%;
-        left:93%;
-        width: $width;
-        height: $height;
-        background: #99E2D0;
-        border-color: transparent;
-    }
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+    content: '';
+    top:-35%;
+    left:96%;
+    width: $width;
+    height: $height;
+    background: $border-and-checkingcolor;
+    border-color: transparent;
 }
 @mixin validation-button($opacity:0,$left:98%) {
-    &::after{
-        font-family: "Font Awesome 5 Free";
-        position: absolute;
-        font-weight: 900;
-        left:$left;
-        opacity: $opacity;
-        bottom: 35%;
-        color: white;
-        font-size: 20px;
-        content: '\f058';
-    }
+
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    font-weight: 900;
+    top:20%;
+    left:$left;
+    opacity: $opacity;
+    color: white;
+    font-size: 20px;
+    content: '\f058';
+    max-width: 95%;
+
 }
+
 
 @if (lightness($color-primary) > 25%) {
     .btn_command:hover{
@@ -275,56 +274,20 @@ body{
     }
 
     .le-menu1::before{
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        position: absolute;
-        content: '';
-        top:-35%;
-        left:96%;
-        width: 0px;
-        height: 0px;
-        background: #99E2D0;
-        border-color: transparent;
+        @include check-button($width:0px,$height:0px);
     }
         .le-menu1:hover::before{
                 animation: checking 1s cubic-bezier(0.23, 1, 0.320, 1);
                 animation-fill-mode: both;
-                border-top-right-radius: 15px;
-                border-bottom-right-radius: 15px;
-                position: absolute;
-                content: '';
-                top:-35%;
-                left:96%;
-                max-width: 95%;
-                width: 56px;
-                height: 70px;
-                background: #99E2D0;
-                border-color: transparent;
+                @include check-button($width:56px,$height:70px);
             }
     .le-menu1::after{
-        font-family: "Font Awesome 5 Free";
-        position: absolute;
-        font-weight: 900;
-        top:40%;
-        left:102%;
-        opacity: 0;
-        color: white;
-        font-size: 20px;
-        content: '\f058';
+        @include validation-button($opacity:0,$left:102%)
     }
         .le-menu1:hover::after{
             animation: rotate 1s cubic-bezier(0.23, 1, 0.320, 1);
             animation-fill-mode: both;
-            font-family: "Font Awesome 5 Free";
-            position: absolute;
-            font-weight: 900;
-            top:20%;
-            left:102%;
-            max-width: 95%;
-            opacity: 1;
-            color: white;
-            font-size: 20px;
-            content: '\f058';
+            @include validation-button($opacity:1,$left:102%);
         }
 
 
@@ -352,32 +315,17 @@ h3{
             position: relative;
     
         }
-        
-        
     }
-        &__card:hover{
-            @media screen and (min-width:750px){    
-            }
-            
-        }
-        &__card:hover::before{
-            animation: checking 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            
-        }
-        &__card:hover::after{
-            animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-            &--title{
-                @include menu-description (80%);
-                &:hover{
+        &--title{
+            @include menu-description (80%);
+            &:hover{
                     @include menu-description (75%);
-                }
             }
+        }
             
-            
-            &--price{
-                @extend %price-style;
-            }
+        &--price{
+            @extend %price-style;
+        }
         
 }
 
@@ -397,29 +345,16 @@ h3{
             width: 370px;
             position: relative;
         }
-        
     }
-        &__card:hover{
-            @media screen and (min-width:750px){    
+       &--title{
+            @include menu-description (78%);
+            &:hover{
+                @include menu-description (80%);
             }
         }
-        &__card:hover::before{
-            animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-            
+        &--price{
+            @extend %price-style;
         }
-        &__card:hover::after{
-            animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-    
-            &--title{
-                @include menu-description (78%);
-                &:hover{
-                    @include menu-description (80%);
-                }
-            }
-            &--price{
-                @extend %price-style;
-            }
 }
 
 .Dessert-menu {
@@ -435,21 +370,9 @@ h3{
             @include menu-block($max-width:100%);
             width: 350px;
         }
-    }
-        &__card:hover{
-            @media screen and (min-width:750px){    
-            }
-        }
-        &__card:hover::before{
-            animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-            
-        }
-        &__card:hover::after{
-            animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
+    }        
         &--title{
-            @include menu-description (100%);
+            @include menu-description (80%);
             &:hover{
                 @include menu-description (80%);
             }
