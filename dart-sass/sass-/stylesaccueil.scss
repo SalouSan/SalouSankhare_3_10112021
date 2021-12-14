@@ -7,7 +7,7 @@ $color-secondary: #FF79DA;
     padding-bottom: 10px;
     border: 1px solid transparent;
     border-radius: 20px;
-    height: 240px;
+    height: 250px;
     background: white;
     position: relative;
 }
@@ -19,9 +19,99 @@ $color-secondary: #FF79DA;
     justify-content: space-evenly;
     height:230px;
     margin-top: 40px;
-    width: 99%;
+    width: 100%;
     padding-left: 20px;
     padding-bottom: 30px;
+}
+@mixin items {
+    display: flex;
+    border-radius: 20px;
+    max-width: 98%;
+    background: rgb(241, 241, 241);
+    margin-left:20px;
+    width: 250px;
+    height: 60px;
+    padding-top:10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+%loader-page{
+    background-color: $color-primary;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    line-height: 500px;
+    font-size: 24px;
+    color: white;
+    width: 100%;
+    animation: page-chargement 5s cubic-bezier(0.03, 1, 1, 1) 150ms ;
+    z-index: -2;
+    opacity: 0;
+}
+
+%Button-new{
+    position: absolute;
+    content: 'Nouveau';
+    padding-left: 9px;
+    padding-top: 8px;
+    font-size: 15px;
+    left:72%;
+    top:6%;
+    background: #99e2d0;
+    color: #339966;
+    width: 69px;
+    height: 24px;
+    font-weight: bold;
+    border-color: transparent;
+    max-width: 90%;
+}
+%Article-button{
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    border-color: transparent;
+    background: $color-secondary;
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+    font-family: Roboto;
+}
+%Resto-place{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    margin-top: -15px;
+    font-weight:100;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+%Grey-icon{
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    padding-bottom:10px;
+    font-size: 18px;
+    color: grey;
+}
+*{
+    box-sizing: border-box;
+}
+@mixin spinner {
+    content: '';
+    position: absolute;
+    top:-6px; 
+    left:-6px;
+    right:-6px;
+    bottom: -6px;
+    border-radius: 50px;
+    border: 6px solid transparent;
+    border-top-color:#FFF;
+    animation : loading-spiner 3s linear 0s 1;
 }
 .loader{
     width: 50px;
@@ -32,14 +122,7 @@ $color-secondary: #FF79DA;
     position: relative;
 }
 .loader-animation{
-    background-color: $color-primary;
-    height: 100%;
-    line-height: 500px;
-    font-size: 24px;
-    color: white;
-    width: 100%;
-    z-index: 10;
-    animation: page-chargement 3s linear 150ms ;
+    @extend %loader-page;
 }
     .loader-animation__spiner{
         border-radius: 50px;
@@ -48,22 +131,19 @@ $color-secondary: #FF79DA;
         margin-left: 40px;
     }
     .loader-animation__spiner::after{
-        content: '';
-        position: absolute;
-        top:-6px; 
-        left:-6px;
-        right:-6px;
-        bottom: -6px;
-        border-radius: 50px;
-        border: 6px solid transparent;
-        border-top-color:#FFF;
-        animation : loading-spiner 3s linear 0s 6;
+        @include spinner;
     }
 @keyframes loading-spiner{
     0%{
         transform: rotate(0deg);
         opacity: 1;
     }
+    
+    50%{
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+
     100%{
         transform: rotate(360deg);
         opacity: 0;
@@ -73,11 +153,31 @@ $color-secondary: #FF79DA;
     0%{
         transform: translateX(0px);
         opacity: 1;
+        z-index: 1000;
+    }
+    25%{
+        transform: translateX(0px);
+        opacity: 1;
+        z-index: 1000;
+    }
+
+    50%{
+        transform: translateX(0px);
+        opacity: 1;
+        z-index: 1000;
+    }
+
+    75%{
+        transform: translateX(-140px);
+        opacity: 1;
+        z-index: 1000;
     }
 
     100%{
         transform: translateX(-299px);
         opacity: 0;
+        z-index: 1;
+        
     }
     
 }
@@ -92,7 +192,6 @@ h3{
     margin-left: 20px;
     @media screen and (min-width:750px) {
         margin-top: 5px;
-        
     }
     margin-bottom:30px;
     padding-top:30px;
@@ -122,6 +221,11 @@ form{
         align-items: center;
     }
 }
+br{
+    @media screen and (min-width:750px) {
+         display: none;   
+    }
+}
 article{
     background: rgb(241, 241, 241);
     text-align: center;
@@ -131,46 +235,35 @@ article{
     width: 100%;
     h2{
         padding-top: 30px;
-
+    
     }
-    button {
-        height: 40px;
-        width: 200px;
-        border-radius: 20px;
-        border-color: transparent;
-        background: $color-secondary;
-        margin-top: 10px;
-        font-size: 14px;
+    .Link{
         color: white;
-        font-family: Roboto;
+        
     }
-}
+        Button {
+        @extend %Article-button;
+        }
+    
+}       
 
 body {
     font-family: $font-family-text; 
+    position: relative;
+    overflow-x: hidden;
 }
 
 .Page-Accueil{
     animation: Affichage 3s ease-in-out;
     animation-delay:4000ms;
-    z-index: -1;
+    z-index: 109;
 }
 
-@keyframes Affichage {
-    0%{
-        transform: translateX(-2999px);
-        opacity: 0;
-        display: none;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
 .Fonctionnement{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    width: 100%;
     @media screen and (min-width:750px) {
         display: flex;
         flex-direction: row;
@@ -179,18 +272,11 @@ body {
         margin-top: 5px;
     }
     .Choose-resto{
-        display: flex;
+        @include items;
         @media screen and (min-width:750px){
             margin-top: 30px;
         }
-        border-radius: 20px;
-        margin-bottom: 20px;
-        margin-left:20px;
-        padding-top:10px;
-        background: rgb(241, 241, 241);
-        width: 250px;
-        height: 60px;
-        position: relative;
+        
         .btn_circle{
             border-radius: 25px;
             border-color: transparent;
@@ -203,30 +289,19 @@ body {
             left:-8px;
         }
         .Mobile-phone{
-            display: flex;
-            align-items: center;
-            margin-left: 25px;
-            padding-bottom:10px;
-            font-size: 18px;
-            color: grey;
+            @extend %Grey-icon;            
         } 
         &__caption{
             margin-left: 20px;
+            margin-top: 10px;
         }
     }
     .Compose-menu{
-        display: flex;
-        border-radius: 20px;
+        @include items;
         @media screen and (min-width:750px){
             margin-top: 25px;
         }
-        background: rgb(241, 241, 241);
-        margin-left:20px;
-        width: 250px;
-        height: 60px;
-        padding-top:10px;
-        margin-bottom: 20px;
-        position: relative;
+        
         .btn_circle{
             border-radius: 25px;
             border-color: transparent;
@@ -239,26 +314,19 @@ body {
             left:-8px;
         }
         .List{
-            display: flex;
-            align-items: center;
-            margin-left: 25px;
-            padding-bottom:10px;
-            color: grey;
+            @extend %Grey-icon;  
         }
         &__caption{
             margin-left: 20px;
+            margin-top: 10px;
         }
     }
 
     .Choose-restaurant{
-        display: flex;
-        border-radius: 20px;
-        margin-left: 20px;
-        background: rgb(241, 241, 241);
-        width: 250px;
-        height: 60px;
-        padding-top:10px;
-        position: relative;
+        @include items;
+        @media screen and (min-width:750px){
+            margin-top: 25px;
+        }
         .btn_circle{
             border-radius: 25px;
             border-color: transparent;
@@ -279,6 +347,7 @@ body {
         }
         &__caption{
             margin-left: 20px;
+            margin-top: 10px;
         }
     }
 }
@@ -303,22 +372,11 @@ body {
     .New-Resto{
         &__card{
         @include card-layout;
+        max-width: 100%;
             
         }
         &__card::before{
-            position: absolute;
-            content: 'Nouveau';
-            padding-left: 9px;
-            padding-top: 8px;
-            font-size: 15px;
-            left:72%;
-            top:6%;
-            background: #99e2d0;
-            color: #339966;
-            width: 69px;
-            height: 24px;
-            font-weight: bold;
-            border-color: transparent;
+            @extend %Button-new;
             
         }
             &--picture{
@@ -326,6 +384,7 @@ body {
                 border-top-right-radius: 15px;
                 width: 340px;
                 height: 180px;
+                max-width: 100%;
             }
             p{
                 font-size: 18px;
@@ -335,14 +394,7 @@ body {
             }
     
             &--place{
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                justify-content: space-between;
-                margin-top: -15px;
-                font-weight:100;
-                font-size: 17px;
-                margin-left: 10px;
+                @extend %Resto-place;
             }  
     
     }
@@ -357,6 +409,7 @@ body {
                 border-top-right-radius: 15px;
                 width: 340px;
                 height: 180px;
+                max-width: 100%;
             }
             p{
                 font-size: 18px;
@@ -365,14 +418,7 @@ body {
                 margin-top: 9px;
             }
             &--place{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                margin-top: -15px;
-                font-weight:100;
-                font-size: 17px;
-                margin-left: 10px;
-                position: relative;          
+                @extend %Resto-place;        
             }
     }
 }
@@ -400,6 +446,7 @@ body {
         animation-name: remplissage;
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
     }
     .Heart:not(:hover)::before{
         font-family: "Font Awesome 5 Free";
@@ -414,7 +461,6 @@ body {
 footer{
     @include footer;
     @media screen and (min-width:750px) {
-        box-sizing: border-box;
     }
     h4 {
         font-family: $font-family-log-title;
