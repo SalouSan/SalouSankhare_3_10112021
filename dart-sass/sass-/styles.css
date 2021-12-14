@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .Principal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,16 +29,16 @@ body {
   cursor: pointer;
 }
 
-.Entrée-menu--price, .Plats-menu--price, .Dessert-menu--price {
+.Entree-menu--price, .Plats-menu--price, .Dessert-menu--price {
   font-weight: bold;
   margin-left: 15px;
   margin-top: -10px;
   position: absolute;
   left: 80%;
-  top: 52%;
+  top: 83%;
 }
 
-.Entrée-menu h4, .Plats-menu h4, .Dessert-menu h4 {
+.Entree-menu h4, .Plats-menu h4, .Dessert-menu h4 {
   font-family: Roboto;
   margin-left: 15px;
   margin-top: 15px;
@@ -66,55 +65,43 @@ body {
           box-shadow: 1px 1px 1px 1px black;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    max-width: 1200px;
+  }
+}
+
+header {
+  position: relative;
+}
+
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+.Arrow {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  font-size: 20px;
+}
+
 h1 {
   text-align: center;
   font-family: Shrikhand;
   font-size: 25px;
 }
 
-h1::before {
-  border: 3px solid black;
-}
-
-.HeadT {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Shrikhand;
-  font-size: 20px;
-  position: relative;
-  margin-left: 15px;
-}
-
-.Heart {
-  position: relative;
-  margin: 0 auto;
-  padding: 0 auto;
-}
-
-.Heart::before {
-  font-family: "Font Awesome 5 Free";
-  content: '\f004';
-  position: absolute;
-  font-weight: 100;
-  font-size: 24px;
-  background-color: white;
-  top: 40%;
-  left: 89%;
-}
-
-.Image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.Link {
-  text-decoration: none;
-  color: black;
+@media screen and (min-width: 750px) {
+  h1 {
+    font-size: 30px;
+  }
 }
 
 main {
@@ -127,11 +114,185 @@ main {
           flex-direction: column;
 }
 
+.Image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .resto {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   height: 300px;
+}
+
+@media screen and (min-width: 750px) {
+  .Principal {
+    max-width: 100%;
+  }
+}
+
+.HeadT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Shrikhand;
+  font-size: 20px;
+  position: relative;
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 750px) {
+  .HeadT {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: Shrikhand;
+    font-size: 25px;
+    position: relative;
+  }
+}
+
+.heart {
+  position: absolute;
+  left: 82%;
+  top: 35%;
+  font-size: 25px;
+}
+
+@media screen and (min-width: 750px) {
+  .heart {
+    position: absolute;
+    left: 52%;
+    top: 32%;
+    font-size: 34px;
+  }
+}
+
+.Heart {
+  position: relative;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+@media screen and (min-width: 750px) {
+  .Heart {
+    position: relative;
+    margin: 0px auto;
+    padding: 0px;
+  }
+}
+
+.Heart::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f004';
+  position: absolute;
+  font-weight: 100;
+  font-size: 24px;
+  top: 40%;
+  left: 89%;
+}
+
+@media screen and (min-width: 750px) {
+  .Heart::before {
+    position: absolute;
+    left: 5%;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .sections {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 95%;
+  }
+}
+
+.le-menu1 {
+  position: relative;
+}
+
+.le-menu1:hover {
+  width: 85%;
+}
+
+.le-menu1::before {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -35%;
+  left: 96%;
+  width: 0px;
+  height: 0px;
+  background: #99E2D0;
+  border-color: transparent;
+}
+
+.le-menu1:hover::before {
+  -webkit-animation: checking 1s cubic-bezier(0.23, 1, 0.32, 1);
+          animation: checking 1s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: absolute;
+  content: '';
+  top: -35%;
+  left: 96%;
+  max-width: 95%;
+  width: 56px;
+  height: 70px;
+  background: #99E2D0;
+  border-color: transparent;
+}
+
+.le-menu1::after {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  top: 40%;
+  left: 102%;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
+}
+
+.le-menu1:hover::after {
+  -webkit-animation: rotate 1s cubic-bezier(0.23, 1, 0.32, 1);
+          animation: rotate 1s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  font-weight: 900;
+  top: 20%;
+  left: 102%;
+  max-width: 95%;
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  content: '\f058';
 }
 
 h3 {
@@ -144,32 +305,13 @@ h3 {
   text-align: center;
 }
 
-.le-menu {
-  position: relative;
-}
-
-.le-menu:hover {
-  width: 80%;
-}
-
-header {
-  position: relative;
-}
-
-.Arrow {
-  position: absolute;
-  top: 13%;
-  left: 5%;
-  font-size: 20px;
-}
-
-.Entrée-menu {
+.Entree-menu {
   text-align: left;
   -webkit-animation: Slidedown 3s 100ms ease-in-out;
           animation: Slidedown 3s 100ms ease-in-out;
 }
 
-.Entrée-menu__card {
+.Entree-menu__card {
   border: 2px double black;
   border-radius: 15px;
   background-color: #FFFF;
@@ -184,122 +326,48 @@ header {
 }
 
 @media screen and (min-width: 750px) {
-  .Entrée-menu__card {
+  .Entree-menu__card {
     border: 2px double black;
     border-radius: 15px;
     background-color: #FFFF;
-    max-width: 92%;
+    max-width: 95%;
     height: 70px;
     border-color: #FFFF;
     -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
             box-shadow: 3px 3px 3px 3px whitesmoke;
     margin-bottom: 10px;
     margin-left: 10px;
+    width: 370px;
+    position: relative;
   }
 }
 
-.Entrée-menu__card::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  content: '';
-  top: -2%;
-  left: 93%;
-  width: 0px;
-  height: 0px;
-  background: #99E2D0;
-  border-color: transparent;
+.Entree-menu__card:hover::before {
+  -webkit-animation: checking 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation: checking 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.Entrée-menu__card::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 900;
-  left: 98%;
-  opacity: 0;
-  bottom: 35%;
-  color: white;
-  font-size: 20px;
-  content: '\f058';
-}
-
-@media screen and (min-width: 750px) {
-  .Entrée-menu__card:hover::before {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    position: absolute;
-    content: '';
-    top: -2%;
-    left: 93%;
-    width: 80px;
-    height: 83px;
-    background: #99E2D0;
-    border-color: transparent;
-  }
-  .Entrée-menu__card:hover::after {
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    font-weight: 900;
-    left: 45%;
-    opacity: 1;
-    bottom: 35%;
-    color: white;
-    font-size: 20px;
-    content: '\f058';
-  }
-}
-
-.Entrée-menu__card:hover::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  content: '';
-  top: -2%;
-  left: 93%;
-  width: 55px;
-  height: 73px;
-  background: #99E2D0;
-  border-color: transparent;
-}
-
-.Entrée-menu__card:hover::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 900;
-  left: 98%;
-  opacity: 1;
-  bottom: 35%;
-  color: white;
-  font-size: 20px;
-  content: '\f058';
-}
-
-.Entrée-menu__card:hover::before {
-  -webkit-animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.Entrée-menu__card:hover::after {
+.Entree-menu__card:hover::after {
   -webkit-animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
           animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.Entrée-menu--title {
+.Entree-menu--title {
   font-weight: 100;
   margin-left: 15px;
   margin-top: -15px;
-  width: 100%;
+  width: 80%;
   font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.Entrée-menu--title:hover {
+.Entree-menu--title:hover {
   font-weight: 100;
   margin-left: 15px;
   margin-top: -15px;
-  width: 80%;
+  width: 75%;
   font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
@@ -326,54 +394,21 @@ header {
   position: relative;
 }
 
-.Plats-menu__card::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  content: '';
-  top: -2%;
-  left: 93%;
-  width: 0px;
-  height: 0px;
-  background: #99E2D0;
-  border-color: transparent;
-}
-
-.Plats-menu__card::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 900;
-  left: 98%;
-  opacity: 0;
-  bottom: 35%;
-  color: white;
-  font-size: 20px;
-  content: '\f058';
-}
-
-.Plats-menu__card:hover::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  content: '';
-  top: -2%;
-  left: 93%;
-  width: 55px;
-  height: 73px;
-  background: #99E2D0;
-  border-color: transparent;
-}
-
-.Plats-menu__card:hover::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 900;
-  left: 98%;
-  opacity: 1;
-  bottom: 35%;
-  color: white;
-  font-size: 20px;
-  content: '\f058';
+@media screen and (min-width: 750px) {
+  .Plats-menu__card {
+    border: 2px double black;
+    border-radius: 15px;
+    background-color: #FFFF;
+    max-width: 95%;
+    height: 70px;
+    border-color: #FFFF;
+    -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+            box-shadow: 3px 3px 3px 3px whitesmoke;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 370px;
+    position: relative;
+  }
 }
 
 .Plats-menu__card:hover::before {
@@ -428,54 +463,20 @@ header {
   position: relative;
 }
 
-.Dessert-menu__card::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  content: '';
-  top: -2%;
-  left: 93%;
-  width: 0px;
-  height: 0px;
-  background: #99E2D0;
-  border-color: transparent;
-}
-
-.Dessert-menu__card::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 900;
-  left: 98%;
-  opacity: 0;
-  bottom: 35%;
-  color: white;
-  font-size: 20px;
-  content: '\f058';
-}
-
-.Dessert-menu__card:hover::before {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: absolute;
-  content: '';
-  top: -2%;
-  left: 93%;
-  width: 55px;
-  height: 73px;
-  background: #99E2D0;
-  border-color: transparent;
-}
-
-.Dessert-menu__card:hover::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 900;
-  left: 98%;
-  opacity: 1;
-  bottom: 35%;
-  color: white;
-  font-size: 20px;
-  content: '\f058';
+@media screen and (min-width: 750px) {
+  .Dessert-menu__card {
+    border: 2px double black;
+    border-radius: 15px;
+    background-color: #FFFF;
+    max-width: 100%;
+    height: 70px;
+    border-color: #FFFF;
+    -webkit-box-shadow: 3px 3px 3px 3px whitesmoke;
+            box-shadow: 3px 3px 3px 3px whitesmoke;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 350px;
+  }
 }
 
 .Dessert-menu__card:hover::before {
@@ -564,52 +565,52 @@ h5 {
 
 @-webkit-keyframes checking {
   0% {
-    -webkit-transform: translateX(28px);
-            transform: translateX(28px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(-28px);
-            transform: translateX(-28px);
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
     opacity: 1;
   }
 }
 
 @keyframes checking {
   0% {
-    -webkit-transform: translateX(28px);
-            transform: translateX(28px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(-28px);
-            transform: translateX(-28px);
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
     opacity: 1;
   }
 }
 
 @-webkit-keyframes rotate {
   0% {
-    -webkit-transform: translateX(-5px) rotate(0);
-            transform: translateX(-5px) rotate(0);
+    -webkit-transform: translateX(50px) rotate(0);
+            transform: translateX(50px) rotate(0);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(-28px) rotate(1turn);
-            transform: translateX(-28px) rotate(1turn);
+    -webkit-transform: translateX(25px) rotate(1turn);
+            transform: translateX(25px) rotate(1turn);
     opacity: 1;
   }
 }
 
 @keyframes rotate {
   0% {
-    -webkit-transform: translateX(-5px) rotate(0);
-            transform: translateX(-5px) rotate(0);
+    -webkit-transform: translateX(50px) rotate(0);
+            transform: translateX(50px) rotate(0);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(-28px) rotate(1turn);
-            transform: translateX(-28px) rotate(1turn);
+    -webkit-transform: translateX(25px) rotate(1turn);
+            transform: translateX(25px) rotate(1turn);
     opacity: 1;
   }
 }

@@ -36,7 +36,7 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     margin-top:-10px;
     position: absolute;
     left:80%;
-    top:52%;
+    top:83%;
 }
 %menu-name{
     font-family: $font-family-text;
@@ -95,11 +95,11 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     padding-bottom: 30px;
 }
 
-@mixin menu-block ($margin-b:10px){
+@mixin menu-block ($margin-b:10px, $max-width:92%){
     border: 2px double black; 
     border-radius: 15px;
     background-color: #FFFF;
-    max-width: 92%;
+    max-width: $max-width;
     height: 70px;
     border-color: #FFFF;
     box-shadow: 3px 3px 3px 3px rgb(245, 245, 245);
@@ -147,96 +147,197 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     box-shadow: 0px 0px 0px 0px;
     }
 }
+*{
+    box-sizing: border-box;
+}
 
-h1{
-    text-align: center;
-    @include Big-title (25px);
-    &::before{
-        border: 3px solid black;
+body{
+    @extend %body;
+    @media screen and (min-width:750px) {
+        max-width: 1200px;
+        
+    }
+}
+    header{
+        position: relative;
+        
+    }
+        .Link{
+            text-decoration: none;
+            color: black;
+        }
+            .Arrow{
+                position: absolute;
+                top :13%;
+                left:5%;
+                font-size:20px;
+            }
+
+        h1{
+            text-align: center;
+            @include Big-title (25px);
+            @media screen and (min-width:750px){
+                font-size: 30px;
+            }
+
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+        }
+
+            .Image{
+                display: flex;
+                width: 100%;
+                object-fit: cover;
+            }
+                .resto{
+                    width: 100%; 
+                    object-fit: cover;
+                    height: 300px;
+                }
+            .Principal{
+                @extend %layout; 
+                @media screen and (min-width:750px) {
+                    max-width: 100%;
+                }
+            
+            }
+            
+                .HeadT{
+                    display: flex;
+                    @include Big-title (20px);
+                    position: relative;
+                    margin-left: 15px;
+                    @media screen and (min-width:750px){
+                        display: flex;
+                        flex-direction: row;
+                        @include Big-title(25px);
+                        position: relative;
+                    }
+                
+                }
+                    .heart{
+                        position: absolute;
+                        left:82%;
+                        top:35%;
+                        font-size: 25px;
+                        @media screen and (min-width:750px) {
+                            position: absolute;
+                            left:52%;
+                            top:32%;
+                            font-size: 34px;
+                        }
+                        
+                    }
+                    .Heart{
+                        position: relative;
+                        margin : 0px auto;
+                        padding: 0px;
+                        @media screen and (min-width:750px) {
+                            position: relative;
+                            margin : 0px auto;
+                            padding: 0px;
+                        }
+                    }
+
+                        .Heart::before{
+                            font-family: "Font Awesome 5 Free";
+                            content: '\f004';
+                            position: absolute;
+                            font-weight: 100;
+                            font-size: 24px;
+                            top: 40%;
+                            left: 89%;
+                            @media screen and (min-width:750px) {
+                                position: absolute;
+                                left: 5%;
+                                font-size: 30px;
+                            }
+                            
+                        }
+                .sections{
+                    @media screen and (min-width:750px) {
+                        display: flex;
+                        flex-direction: row;
+                        flex-flow: wrap;
+                        justify-content: space-between;
+                        width: 95%;
+                    }
+                }        
+
+
+.le-menu1{
+    position: relative;
+}
+    .le-menu1:hover{
+        width: 85%;
     }
 
-}
-    
-.HeadT{
-    display: flex;
-    @include Big-title (20px);
-    position: relative;
-    margin-left: 15px;
- 
-}
-.Heart{
-    position: relative;
-    margin : 0 auto;
-    padding: 0 auto;
-}
+    .le-menu1::before{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        position: absolute;
+        content: '';
+        top:-35%;
+        left:96%;
+        width: 0px;
+        height: 0px;
+        background: #99E2D0;
+        border-color: transparent;
+    }
+        .le-menu1:hover::before{
+                animation: checking 1s cubic-bezier(0.23, 1, 0.320, 1);
+                animation-fill-mode: both;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                position: absolute;
+                content: '';
+                top:-35%;
+                left:96%;
+                max-width: 95%;
+                width: 56px;
+                height: 70px;
+                background: #99E2D0;
+                border-color: transparent;
+            }
+    .le-menu1::after{
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        font-weight: 900;
+        top:40%;
+        left:102%;
+        opacity: 0;
+        color: white;
+        font-size: 20px;
+        content: '\f058';
+    }
+        .le-menu1:hover::after{
+            animation: rotate 1s cubic-bezier(0.23, 1, 0.320, 1);
+            animation-fill-mode: both;
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            font-weight: 900;
+            top:20%;
+            left:102%;
+            max-width: 95%;
+            opacity: 1;
+            color: white;
+            font-size: 20px;
+            content: '\f058';
+        }
 
-.Heart::before{
-    font-family: "Font Awesome 5 Free";
-    content: '\f004';
-    position: absolute;
-    font-weight: 100;
-    font-size: 24px;
-    background-color: white;
-    top: 40%;
-    left: 89%;
-   
-    
-}
 
-.Image{
-    display: flex;
-    width: 100%;
-    object-fit: cover;
-}
-.Principal{
-    @extend %layout;    
 
-}
-.Link{
-    text-decoration: none;
-    color: black;
-}
-main{
-    display: flex;
-    flex-direction: column;
-}
-
-.resto{
-    width: 100%; 
-    object-fit: cover;
-    height: 300px;
-}
 
 h3{
     @include h3form;
     text-align: center;
 }
-.le-menu{
-    position: relative;
-}
-.le-menu:hover{
-    width: 80%;
-}
 
 
-header{
-    position: relative;
-    
-}
 
-.Arrow{
-    position: absolute;
-    top :13%;
-    left:5%;
-    font-size:20px;
-}
-
-
-body{
-    @extend %body;
-}
-
-.Entrée-menu{
+.Entree-menu{
     text-align: left;
     animation: Slidedown 3s 100ms ease-in-out ;
     h4{
@@ -244,35 +345,36 @@ body{
     }
     &__card{
         @include menu-block (15px); 
-        @media screen and (min-width:750px) {
-            @include menu-block;
-        }
         position: relative;
-        @include check-button($width:0px, $height:0px);
-        @include validation-button ($opacity:0);
+        @media screen and (min-width:750px) {
+            @include menu-block($max-width:95%);
+            width: 370px;
+            position: relative;
+    
+        }
+        
         
     }
         &__card:hover{
-            @media screen and (min-width:750px){
-                @include check-button($width:80px, $height:83px);
-                @include validation-button ($opacity:1,$left:45%);
+            @media screen and (min-width:750px){    
             }
-            @include check-button($width:55px, $height:73px);
-            @include validation-button ($opacity:1,$left:98%);
+            
         }
         &__card:hover::before{
-            animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
+            animation: checking 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             
         }
         &__card:hover::after{
             animation: rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
         }
             &--title{
-                @include menu-description (100%);
+                @include menu-description (80%);
                 &:hover{
-                    @include menu-description (80%);
+                    @include menu-description (75%);
                 }
             }
+            
+            
             &--price{
                 @extend %price-style;
             }
@@ -283,19 +385,23 @@ body{
 .Plats-menu {
     text-align: left;
     animation: Slidedown 3s 200ms ease-in-out ;
+    
     h4{
         @extend %menu-name;
     }
     &__card{
         @include menu-block (15px);
         position: relative;
-        @include check-button($width:0px, $height:0px);
-        @include validation-button ($opacity:0);
+        @media screen and (min-width:750px) {
+            @include menu-block ($max-width:95%);
+            width: 370px;
+            position: relative;
+        }
         
     }
         &__card:hover{
-            @include check-button($width:55px, $height:73px);
-            @include validation-button ($opacity:1);
+            @media screen and (min-width:750px){    
+            }
         }
         &__card:hover::before{
             animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -318,19 +424,21 @@ body{
 
 .Dessert-menu {
     text-align: left;
-    animation: Slidedown 3s 400ms ease-in-out ;
+    animation: Slidedown 3s 400ms ease-in-out; 
     h4{
         @extend %menu-name;
     }
     &__card{
         @include menu-block(15px);
         position: relative;
-        @include check-button($width:0px, $height:0px);
-        @include validation-button ($opacity:0);
+        @media screen and (min-width:750px) {
+            @include menu-block($max-width:100%);
+            width: 350px;
+        }
     }
         &__card:hover{
-            @include check-button($width:55px, $height:73px);
-            @include validation-button ($opacity:1);
+            @media screen and (min-width:750px){    
+            }
         }
         &__card:hover::before{
             animation: checking 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -377,22 +485,22 @@ footer {
 }
 @keyframes checking {
     0%{
-        transform: translateX(28px);
+        transform: translateX(50px);
         opacity: 0;
     }
     100%{
-        transform: translateX(-28px);
+        transform: translateX(25px);
         opacity:1;    
     }
     
 }
 @keyframes rotate {
     0%{
-        transform: translateX(-5px) rotate(0);
+        transform: translateX(50px) rotate(0);
         opacity: 0;
     }
     100%{
-        transform: translateX(-28px) rotate(1turn);
+        transform: translateX(25px) rotate(1turn);
         opacity:1;
 
     }
