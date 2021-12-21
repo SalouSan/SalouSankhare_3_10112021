@@ -507,7 +507,7 @@ body {
           flex-direction: column;
 }
 
-.Restaurants .Restaurants-places {
+.Restaurants .Restaurants-places1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,7 +526,7 @@ body {
 }
 
 @media screen and (min-width: 750px) {
-  .Restaurants .Restaurants-places {
+  .Restaurants .Restaurants-places1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -540,6 +540,36 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     padding-left: 10px;
+  }
+}
+
+.Restaurants .Restaurants-places2 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+  margin-left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 750px) {
+  .Restaurants .Restaurants-places2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
