@@ -71,7 +71,7 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     font-weight: lighter;
     font-size: 16px;
     border-bottom : 2px solid $border-and-checkingcolor;
-    max-width: 11%;
+    width: 42px;
     margin-left: 15px;
 }
 @mixin Big-title ($size:16px) {
@@ -248,9 +248,17 @@ body{
                         display: flex;
                         flex-direction: row;
                         flex-flow: wrap;
-                        justify-content: space-between;
+                        justify-content: center;
                         width: 95%;
                     }
+                    @media screen and (min-width:480px) and (max-width:749px) {
+                        display: flex;
+                        flex-direction: row;
+                        flex-flow: wrap;
+                        justify-content: center;
+                        width: 95%;
+                    }
+                    
                 }        
 
 
@@ -301,7 +309,14 @@ h3{
             @include menu-block($max-width:95%);
             width: 370px;
             position: relative;
+            justify-content: center;
     
+        }
+        @media screen and (min-width:480px) and (max-width:749px) {
+            @include menu-block($max-width:100%);
+            width: 370px;
+            position: relative;
+            justify-content: center;            
         }
     }
         &--title{
@@ -332,6 +347,13 @@ h3{
             @include menu-block ($max-width:95%);
             width: 370px;
             position: relative;
+            justify-content: center;
+        }
+        @media screen and (min-width:480px) and (max-width:749px) {
+            @include menu-block($max-width:100%);
+            width: 370px;
+            position: relative;
+            justify-content: center;            
         }
     }
        &--title{
@@ -357,6 +379,13 @@ h3{
         @media screen and (min-width:750px) {
             @include menu-block($max-width:100%);
             width: 350px;
+            justify-content: center;
+        }
+        @media screen and (min-width:480px) and (max-width:749px) {
+            @include menu-block($max-width:100%);
+            width: 370px;
+            position: relative;
+            justify-content: center;            
         }
     }        
         &--title{
