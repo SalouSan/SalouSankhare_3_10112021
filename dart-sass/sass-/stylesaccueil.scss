@@ -8,8 +8,9 @@ $color-secondary: #FF79DA;
     border: 1px solid transparent;
     border-radius: 20px;
     height: 250px;
-    background: white;
+    background: none;
     position: relative;
+    margin-bottom: 20px;
 }
 @mixin footer{
     background: rgb(53, 48, 48);
@@ -25,13 +26,16 @@ $color-secondary: #FF79DA;
 }
 @mixin items {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     border-radius: 20px;
     max-width: 98%;
     background: rgb(241, 241, 241);
-    margin-left:20px;
+    margin-left:10px;
     width: 250px;
     height: 60px;
-    padding-top:10px;
+    padding-top:5px;
+    padding-right: 15px;
     margin-bottom: 20px;
     position: relative;
 }
@@ -73,13 +77,13 @@ $color-secondary: #FF79DA;
     width: 200px;
     border-radius: 20px;
     border-color: transparent;
-    background: $color-secondary;
+    background: $color-primary;
     margin-top: 10px;
     padding-top:10px;
     display: flex;
     justify-content: center;
     text-align: center;
-    font-weight: bold;
+    font-weight: thin;
     font-size: 14px;
     color: white;
     font-family: Roboto;
@@ -99,7 +103,7 @@ $color-secondary: #FF79DA;
     display: flex;
     align-items: center;
     margin-left: 25px;
-    padding-bottom:10px;
+    padding-bottom:5px;
     font-size: 18px;
     color: grey;
 }
@@ -118,6 +122,8 @@ $color-secondary: #FF79DA;
     border-top-color:#FFF;
     animation : loading-spiner 3s linear 0s 1;
 }
+
+
 .loader{
     width: 50px;
     height: 50px;
@@ -188,7 +194,7 @@ h3{
     @media screen and (min-width:750px) {
         margin-top: 5px;
     }
-    margin-bottom:30px;
+    padding-bottom:10px;
     padding-top:30px;
     font-size:22px;
 }
@@ -238,7 +244,12 @@ article{
         
     }
         .btn--link {
-        @extend %Article-button;
+            @extend %Article-button;
+    
+            &:hover{
+                background : linear-gradient(to top left, $color-primary, $color-secondary);
+                box-shadow: 1px 1px 1px 1px white;
+            }
         }
     
 }       
@@ -260,115 +271,80 @@ body {
     flex-direction: column;
     margin-bottom: 30px;
     width: 100%;
+    margin-left: 3px;
+
+    @for $i from 1 through 3 {
+        .function-#{$i} {
+            @include items;
+            @media screen and (min-width:750px){
+            margin-top: 25px;
+        }
+            .btn_circle{
+                border-radius: 25px;
+                border-color: transparent;
+                width: 22px;
+                height: 22px;
+                color: white;
+                background: $color-primary;
+                position: absolute;
+                top: 35%;
+                left:-8px;
+            }
+            .Icon{
+                @extend %Grey-icon;
+                :hover{
+                    color: $color-primary;
+                }         
+            } 
+            &__caption{
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+        }
+    }
     @media screen and (min-width:750px) {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         margin-top: 5px;
-    }
-    .Choose-resto{
-        @include items;
-        @media screen and (min-width:750px){
-            margin-top: 30px;
-        }
-        
-        .btn_circle{
-            border-radius: 25px;
-            border-color: transparent;
-            width: 22px;
-            height: 22px;
-            color: white;
-            background: $color-primary;
-            position: absolute;
-            top:35%;
-            left:-8px;
-        }
-        .Mobile-phone{
-            @extend %Grey-icon;            
-        } 
-        &__caption{
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-    }
-    .Compose-menu{
-        @include items;
-        @media screen and (min-width:750px){
-            margin-top: 25px;
-        }
-        
-        .btn_circle{
-            border-radius: 25px;
-            border-color: transparent;
-            width: 22px;
-            height: 22px;
-            color: white;
-            background: $color-primary;
-            position: absolute;
-            top: 35%;
-            left:-8px;
-        }
-        .List{
-            @extend %Grey-icon;  
-        }
-        &__caption{
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-    }
-
-    .Choose-restaurant{
-        @include items;
-        @media screen and (min-width:750px){
-            margin-top: 25px;
-        }
-        .btn_circle{
-            border-radius: 25px;
-            border-color: transparent;
-            width: 22px;
-            height: 22px;
-            color: white;
-            background: $color-primary;
-            position: absolute;
-            top: 35%;
-            left: -8px;
-        }
-        .Store{
-            display: flex;
-            align-items: center;
-            margin-left: 25px;
-            padding-bottom:10px;
-            color: $color-primary;
-        }
-        &__caption{
-            margin-left: 20px;
-            margin-top: 10px;
-        }
+        margin-left: 3px;
     }
 }
+
+
 
 
 .Restaurants{
     background: rgb(241, 241, 241);
     width: 100%;
+    height: 100%;
     margin-left: 0px;
+    display: flex;
+    flex-direction: column;
     .Restaurants-places{
     @media screen and (min-width:750px) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 10px;
     }
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin-top: -25px;
     margin-left: 0px;
     }
     .New-Resto{
         &__card{
-        @include card-layout;
-        max-width: 100%;
+            @include card-layout;
+            max-width: 100%;
+            @media screen and (min-width:750px) {
+                margin-right: 10px;
+                flex-wrap: wrap;
+            }
             
         }
         &__card::before{
@@ -381,8 +357,20 @@ body {
                 width: 340px;
                 height: 180px;
                 max-width: 100%;
+                margin-left: 0.5px;
+                margin-right: 0.5px;
             }
-            p{
+
+            &--description{
+                background: white;
+                border-bottom-right-radius:15px;
+                border-bottom-left-radius: 15px;
+                height: 75px;
+                padding-top: 8px;
+                margin-top: -12px;
+            
+            }
+            &--name{
                 font-size: 18px;
                 font-weight: bold;
                 margin-left: 10px;
@@ -399,6 +387,9 @@ body {
         &__card{
             @include card-layout;
             position: relative;
+            @media screen and (min-width:750px) {
+                margin-right: 15px;
+            }
         }
             &--picture{
                 border-top-left-radius: 15px;
@@ -407,7 +398,16 @@ body {
                 height: 180px;
                 max-width: 100%;
             }
-            p{
+            &--description{
+                background: white;
+                border-bottom-right-radius:15px;
+                border-bottom-left-radius: 15px;
+                height: 75px;
+                padding-top: 8px;
+                margin-top: -12px;
+            
+            }
+            &--name{
                 font-size: 18px;
                 font-weight: bold;
                 margin-left: 10px;
