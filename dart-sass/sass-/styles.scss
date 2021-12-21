@@ -132,20 +132,8 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     max-width: 95%;
 
 }
+    
 
-
-@if (lightness($color-primary) > 25%) {
-    .btn_command:hover{
-        background-color:lighten($color-secondary,5%);
-        box-shadow: 1px 1px 1px 1px black;
-    }
-} 
-@else {
-    .btn_command:hover{
-    background-color: darken($color-primary,10%);
-    box-shadow: 0px 0px 0px 0px;
-    }
-}
 *{
     box-sizing: border-box;
 }
@@ -385,6 +373,10 @@ h3{
 
 .btn_command{
     @extend %btn-command;
+    &:hover{
+        background : linear-gradient(to top left, $color-primary, $color-secondary);
+        box-shadow: 1px 1px 1px 1px white;
+    }
 }
 
 
@@ -394,6 +386,11 @@ footer {
 }
     h5{
         @include Big-title(18px)
+    }
+
+    .Ct{
+        text-decoration: none;
+        color: white;
     }
 
 @keyframes Slidedown {

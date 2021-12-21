@@ -58,12 +58,6 @@ body {
   margin-top: 25px;
 }
 
-.btn_command:hover {
-  background-color: #ff93e1;
-  -webkit-box-shadow: 1px 1px 1px 1px black;
-          box-shadow: 1px 1px 1px 1px black;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -480,6 +474,13 @@ h3 {
   text-overflow: ellipsis;
 }
 
+.btn_command:hover {
+  background: -webkit-gradient(linear, right bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(to top left, #9356DC, #FF79DA);
+  -webkit-box-shadow: 1px 1px 1px 1px white;
+          box-shadow: 1px 1px 1px 1px white;
+}
+
 footer {
   background-color: #353030;
   font-family: Roboto;
@@ -504,6 +505,11 @@ footer {
 h5 {
   font-family: Shrikhand;
   font-size: 18px;
+}
+
+.Ct {
+  text-decoration: none;
+  color: white;
 }
 
 @-webkit-keyframes Slidedown {
