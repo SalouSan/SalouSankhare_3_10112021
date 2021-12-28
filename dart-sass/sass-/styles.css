@@ -260,10 +260,14 @@ main {
 }
 
 .le-menu1:hover::before {
-  -webkit-animation: checking 1s cubic-bezier(0.23, 1, 0.32, 1);
-          animation: checking 1s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation: checking 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: checking 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   position: absolute;
@@ -290,10 +294,14 @@ main {
 }
 
 .le-menu1:hover::after {
-  -webkit-animation: rotate 1s cubic-bezier(0.23, 1, 0.32, 1);
-          animation: rotate 1s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation: rotate 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: rotate 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
   font-family: "Font Awesome 5 Free";
   position: absolute;
   font-weight: 900;
@@ -632,8 +640,8 @@ h5 {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(25px);
-            transform: translateX(25px);
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
     opacity: 1;
   }
 }
@@ -645,8 +653,8 @@ h5 {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(25px);
-            transform: translateX(25px);
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
     opacity: 1;
   }
 }
@@ -658,8 +666,8 @@ h5 {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(25px) rotate(1turn);
-            transform: translateX(25px) rotate(1turn);
+    -webkit-transform: translateX(20px) rotate(1turn);
+            transform: translateX(20px) rotate(1turn);
     opacity: 1;
   }
 }
@@ -671,8 +679,8 @@ h5 {
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(25px) rotate(1turn);
-            transform: translateX(25px) rotate(1turn);
+    -webkit-transform: translateX(20px) rotate(1turn);
+            transform: translateX(20px) rotate(1turn);
     opacity: 1;
   }
 }

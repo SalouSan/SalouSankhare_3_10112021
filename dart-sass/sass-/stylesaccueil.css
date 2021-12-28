@@ -292,8 +292,8 @@ article .btn {
 article .btn--link:hover {
   background: -webkit-gradient(linear, right bottom, left top, from(#9356DC), to(#FF79DA));
   background: linear-gradient(to top left, #9356DC, #FF79DA);
-  -webkit-box-shadow: 1px 1px 1px 1px white;
-          box-shadow: 1px 1px 1px 1px white;
+  -webkit-box-shadow: 1px 2px 2px 1px grey;
+          box-shadow: 1px 2px 2px 1px grey;
 }
 
 body {
