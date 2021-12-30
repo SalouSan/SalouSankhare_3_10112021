@@ -30,19 +30,25 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: pointer;
 }
 %price-style{
-    font-weight: bold;
-    margin-left: 15px;
-    margin-top:-10px;
-    position: absolute;
-    left:80%;
-    top:83%;
+    margin-right:30px;
+    margin-top: 47px;
+    font-weight: bolder;
 }
 %menu-name{
-    font-family: $font-family-text;
-    margin-left : 15px;
-    margin-top: 15px;
-    font-weight: bolder;
-    font-size: 18px;
+    padding-top:0px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+%menu-title{
+    margin-bottom: -3px;
+    margin-left: 15px;
+    font-size:18px;
+    padding-top: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 %btn-command{
     background-color:$color-primary;
@@ -55,15 +61,15 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     margin-left :33%;
     margin-top:25px; 
 }
-@mixin menu-description ($width:100%){
-    font-weight: 100;
-    margin-left: 15px;
-    margin-top: -15px;
-    width:$width;
-    font-size: 15px;
+@mixin menu-description {
+    padding-left: 15px;
+    font-weight: lighter;
+    padding-bottom:15px;
+    font-size: 16px; 
+    width: 99%;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 @mixin h3form {
@@ -94,46 +100,22 @@ $animation-validation-button : rotate 1s cubic-bezier(0.19, 1, 0.22, 1);
     padding-bottom: 30px;
 }
 
-@mixin menu-block ($margin-b:10px, $max-width:92%){
+@mixin menu-block ($margin-b:10px,$max-width:92%){
     border: 2px double black; 
     border-radius: 15px;
     background-color: #FFFF;
+    margin-bottom: $margin-b;
     max-width: $max-width;
     height: 70px;
     border-color: #FFFF;
     box-shadow: 3px 3px 3px 3px rgb(245, 245, 245);
     margin-bottom: $margin-b;
     margin-left:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
-@mixin check-button ($width:0px, $height:0px){
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    position: absolute;
-    content: '';
-    top:-35%;
-    left:96%;
-    width: $width;
-    height: $height;
-    background: $border-and-checkingcolor;
-    border-color: transparent;
-}
-@mixin validation-button($opacity:0,$left:98%) {
-
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    font-weight: 900;
-    top:20%;
-    left:$left;
-    opacity: $opacity;
-    color: white;
-    font-size: 20px;
-    content: '\f058';
-    max-width: 95%;
-
-}
-    
-
 *{
     box-sizing: border-box;
 }
@@ -261,38 +243,6 @@ body{
                     
                 }        
 
-
-.le-menu1{
-    position: relative;
-}
-    .le-menu1:hover{
-        width: 85%;
-    }
-
-    .le-menu1::before{
-        @include check-button($width:0px,$height:0px);
-    }
-        .le-menu1:hover::before{
-                animation: checking 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-                animation-fill-mode: both;
-                animation-direction: alternate;
-                animation-iteration-count: 2;
-                @include check-button($width:56px,$height:70px);
-            }
-    .le-menu1::after{
-        @include validation-button($opacity:0,$left:102%)
-    }
-        .le-menu1:hover::after{
-            animation: rotate 1.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-            animation-fill-mode: both;
-            animation-direction: alternate;
-            animation-iteration-count: 2;
-            @include validation-button($opacity:1,$left:102%);
-        }
-
-
-
-
 h3{
     @include h3form;
     text-align: center;
@@ -303,36 +253,68 @@ h3{
 .Entree-menu{
     text-align: left;
     animation: Slidedown 3s 100ms ease-in-out ;
-    h4{
-        @extend %menu-name;
-    }
     &__card{
-        @include menu-block (15px); 
+        @include menu-block;
         position: relative;
         @media screen and (min-width:750px) {
-            @include menu-block($max-width:95%);
+            @include menu-block;
             width: 370px;
             position: relative;
             justify-content: center;
     
         }
         @media screen and (min-width:480px) and (max-width:749px) {
-            @include menu-block($max-width:100%);
+            @include menu-block;
             width: 370px;
             position: relative;
             justify-content: center;            
         }
+        
     }
-        &--title{
-            @include menu-description (80%);
-            &:hover{
-                    @include menu-description (75%);
-            }
+    &__card:hover .animate{
+        width: 66px;
+        height:70px;
+        margin-left: 5px;
+        transition: 1s;
+    }
+    
+        &--name{
+            @extend %menu-name;
         }
+            &--title{
+                @extend %menu-title;
+            }
+            &--description{
+                @include menu-description;
+            }
             
         &--price{
             @extend %price-style;
         }
+        .overlay{
+            width: 0px;
+            background-color: $border-and-checkingcolor;
+            transition: 1s;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+            .overlay .fas{
+                opacity: 0;
+                color: white;
+                transform: rotate(360deg);
+                transition: 1s;
+                padding-top:30px;
+                font-size:18px;
+            } 
+            &__card:hover .fas{
+                opacity: 1;
+                transition: 1s;
+                transform: rotate(0);
+                font-size:18px;
+            }
         
 }
 
@@ -341,65 +323,135 @@ h3{
     text-align: left;
     animation: Slidedown 3s 200ms ease-in-out ;
     
-    h4{
-        @extend %menu-name;
-    }
     &__card{
-        @include menu-block (15px);
+        @include menu-block;
         position: relative;
         @media screen and (min-width:750px) {
-            @include menu-block ($max-width:95%);
+            @include menu-block ;
             width: 370px;
             position: relative;
             justify-content: center;
         }
         @media screen and (min-width:480px) and (max-width:749px) {
-            @include menu-block($max-width:100%);
+            @include menu-block;
             width: 370px;
             position: relative;
             justify-content: center;            
         }
+        
     }
-       &--title{
-            @include menu-description (78%);
-            &:hover{
-                @include menu-description (80%);
-            }
+    &__card:hover .animate{
+        width: 66px;
+        height:70px;
+        margin-left: 5px;
+        transition: 1s;
+    }
+    &__card:hover .fas{
+        opacity: 1;
+        transition: 1s;
+        transform: rotate(0);
+    }
+        &--name{
+            @extend %menu-name;
         }
+            &--title{
+                    @extend %menu-title;
+                }
+            &--description{
+                @include menu-description;
+            }
         &--price{
             @extend %price-style;
+        }
+        .overlay{
+            width: 0px;
+            background-color: $border-and-checkingcolor;
+            transition: 1s;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .overlay .fas{
+            opacity: 0;
+            color: white;
+            transform: rotate(360deg);
+            transition: 1s;
+            padding-top:30px;
+            font-size:18px;
+        } 
+        &__card:hover .fas{
+            opacity: 1;
+            transition: 1s;
+            transform: rotate(0);
+            font-size:18px;
         }
 }
 
 .Dessert-menu {
     text-align: left;
     animation: Slidedown 3s 400ms ease-in-out; 
-    h4{
-        @extend %menu-name;
-    }
     &__card{
-        @include menu-block(15px);
-        position: relative;
+        @include menu-block;
         @media screen and (min-width:750px) {
-            @include menu-block($max-width:100%);
+            @include menu-block;
             width: 350px;
             justify-content: center;
         }
         @media screen and (min-width:480px) and (max-width:749px) {
-            @include menu-block($max-width:100%);
+            @include menu-block;
             width: 370px;
             position: relative;
             justify-content: center;            
         }
-    }        
-        &--title{
-            @include menu-description (80%);
-            &:hover{
-                @include menu-description (80%);
+    }  
+    &__card:hover .animate{
+        width: 66px;
+        height:70px;
+        margin-left: 5px;
+        transition: 1s;
+    }
+    &__card:hover .circle{
+        opacity: 1;
+        transition: 1s;
+        transform: rotate(1turn);
+    }
+        &--name{
+            @extend %menu-name;
+        }      
+            &--title{
+                @extend %menu-title;
             }
-        }
+            &--description{
+                @include menu-description;
+            }
         &--price{
             @extend %price-style;
+        }
+        .overlay{
+            width: 0px;
+            background-color: $border-and-checkingcolor;
+            transition: 1s;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .overlay .fas{
+            opacity: 0;
+            color: white;
+            transform: rotate(360deg);
+            transition: 1s;
+            padding-top:30px;
+            font-size:18px;
+        } 
+        &__card:hover .fas{
+            opacity: 1;
+            transition: 1s;
+            transform: rotate(0);
+            font-size:18px;
         }
 }
 
@@ -436,30 +488,8 @@ footer {
     opacity: 1;
     }
 }
-@keyframes checking {
-    0%{
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    
-    100%{
-        transform: translateX(20px);
-        opacity:1;
-    }
-    
-}
-@keyframes rotate {
-    0%{
-        transform: translateX(50px) rotate(0);
-        opacity: 0;
-    }
-    
-    100%{
-        transform: translateX(20px) rotate(1turn);
-        opacity:1;
 
-    }
-}
+
 
 
 
